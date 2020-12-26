@@ -16,10 +16,10 @@ import java.util.Set;
 
 public class RefineryManager {
 
-	private static Int2ObjectOpenHashMap<RefineryRecipe> recipeMap = new Int2ObjectOpenHashMap<>();
-	private static Int2ObjectOpenHashMap<RefineryRecipe> recipeMapPotion = new Int2ObjectOpenHashMap<>();
-	private static Set<String> bioFluids = new ObjectOpenHashSet<>();
-	private static Set<String> fossilFluids = new ObjectOpenHashSet<>();
+	private static final Int2ObjectOpenHashMap<RefineryRecipe> recipeMap = new Int2ObjectOpenHashMap<>();
+	private static final Int2ObjectOpenHashMap<RefineryRecipe> recipeMapPotion = new Int2ObjectOpenHashMap<>();
+	private static final Set<String> bioFluids = new ObjectOpenHashSet<>();
+	private static final Set<String> fossilFluids = new ObjectOpenHashSet<>();
 
 	public static final int DEFAULT_ENERGY = 5000;
 

@@ -4,12 +4,13 @@ import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalexpansion.util.managers.device.TapperManager;
 import cofh.thermalexpansion.util.managers.machine.InsolatorManager;
 import cofh.thermalexpansion.util.managers.machine.SawmillManager;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 public class PluginPlants extends PluginTEBase {
 
@@ -232,18 +233,18 @@ public class PluginPlants extends PluginTEBase {
 
 		/* TAPPER */
 		{
-			TapperManager.addItemMapping(logBlackKauri, new FluidStack(TFFluids.fluidResin, 10));
-			TapperManager.addItemMapping(logBrazilianPine, new FluidStack(TFFluids.fluidResin, 20));
-			TapperManager.addItemMapping(logIncenseCedar, new FluidStack(TFFluids.fluidResin, 10));
-			TapperManager.addItemMapping(logMurrayPine, new FluidStack(TFFluids.fluidResin, 20));
+			TapperManager.addItemMapping(logBlackKauri, Materials.RESIN.getStack(FluidType.LIQUID, 10));
+			TapperManager.addItemMapping(logBrazilianPine, Materials.RESIN.getStack(FluidType.LIQUID, 20));
+			TapperManager.addItemMapping(logIncenseCedar, Materials.RESIN.getStack(FluidType.LIQUID, 10));
+			TapperManager.addItemMapping(logMurrayPine, Materials.RESIN.getStack(FluidType.LIQUID, 20));
 
 			TapperManager.addItemMapping(logAshen, new FluidStack(FluidRegistry.LAVA, 5));
 			TapperManager.addItemMapping(logBlazing, new FluidStack(FluidRegistry.LAVA, 10));
 
-			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 5), new FluidStack(TFFluids.fluidResin, 50));
-			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 6), new FluidStack(TFFluids.fluidResin, 100));
-			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 7), new FluidStack(TFFluids.fluidResin, 50));
-			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 8), new FluidStack(TFFluids.fluidResin, 100));
+			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 5), Materials.RESIN.getStack(FluidType.LIQUID, 50));
+			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 6), Materials.RESIN.getStack(FluidType.LIQUID, 100));
+			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 7), Materials.RESIN.getStack(FluidType.LIQUID, 50));
+			TapperManager.addBlockStateMapping(new ItemStack(blockLog, 1, 8), Materials.RESIN.getStack(FluidType.LIQUID, 100));
 
 			TapperManager.addBlockStateMapping(new ItemStack(blockLogNether, 1, 5), new FluidStack(FluidRegistry.LAVA, 25));
 			TapperManager.addBlockStateMapping(new ItemStack(blockLogNether, 1, 6), new FluidStack(FluidRegistry.LAVA, 50));

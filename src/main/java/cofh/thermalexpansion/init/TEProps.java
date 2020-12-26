@@ -277,6 +277,11 @@ public class TEProps {
 
 	public static boolean enableSounds = true;
 
+	public static final String EXPERIENCE_TIMER = "thermalexpansion.experience_timer";
+
+	public static final String LEXICON_TIMER = "thermalexpansion.lexicon_timer";
+	public static final String LEXICON_DATA = "thermalexpansion.lexicon_data";
+
 	/* UPGRADE */
 	public static int levelAutoInput = 0;
 	public static int levelAutoOutput = 0;

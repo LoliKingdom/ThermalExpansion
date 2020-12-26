@@ -14,8 +14,8 @@ import java.util.List;
 
 public class FisherManager {
 
-	private static List<ItemStack> fishList = new ArrayList<>();
-	private static List<Integer> weightList = new ArrayList<>();
+	private static final List<ItemStack> fishList = new ArrayList<>();
+	private static final List<Integer> weightList = new ArrayList<>();
 	private static int totalWeight;
 
 	private static TObjectIntHashMap<ComparableItemStack> baitMap = new TObjectIntHashMap<>();

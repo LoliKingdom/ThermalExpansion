@@ -2,7 +2,6 @@ package cofh.thermalexpansion.block.dynamo;
 
 import cofh.core.init.CoreProps;
 import cofh.core.network.PacketBase;
-import cofh.core.render.TextureHelper;
 import cofh.core.util.core.EnergyConfig;
 import cofh.core.util.helpers.AugmentHelper;
 import cofh.core.util.helpers.EnergyHelper;
@@ -12,8 +11,8 @@ import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.gui.client.dynamo.GuiDynamoEnervation;
 import cofh.thermalexpansion.gui.container.dynamo.ContainerDynamoEnervation;
 import cofh.thermalexpansion.init.TEProps;
+import cofh.thermalexpansion.init.TETextures;
 import cofh.thermalexpansion.util.managers.dynamo.EnervationManager;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -115,7 +114,7 @@ public class TileDynamoEnervation extends TileDynamoBase {
 	@SideOnly (Side.CLIENT)
 	public TextureAtlasSprite getBaseUnderlayTexture() {
 
-		return TextureHelper.getTexture(TFFluids.fluidRedstone.getStill());
+		return TETextures.CELL_CENTER_1;
 	}
 
 	/* GUI METHODS */

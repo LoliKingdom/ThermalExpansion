@@ -6,7 +6,6 @@ import cofh.core.inventory.ComparableItemStack;
 import cofh.core.inventory.ComparableItemStackValidatedNBT;
 import cofh.core.inventory.OreValidator;
 import cofh.core.util.helpers.FluidHelper;
-import cofh.thermalfoundation.init.TFFluids;
 import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
@@ -27,8 +26,8 @@ public class BrewerManager {
 
 	private static Map<List<Integer>, BrewerRecipe> recipeMap = new Object2ObjectOpenHashMap<>();
 	private static Set<ComparableItemStackValidatedNBT> validationSet = new ObjectOpenHashSet<>();
-	private static Set<String> validationFluids = new ObjectOpenHashSet<>();
-	private static OreValidator oreValidator = new OreValidator();
+	private static final Set<String> validationFluids = new ObjectOpenHashSet<>();
+	private static final OreValidator oreValidator = new OreValidator();
 
 	static {
 		oreValidator.addPrefix(ComparableItemStack.DUST);

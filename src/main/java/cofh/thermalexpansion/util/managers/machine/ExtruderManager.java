@@ -18,8 +18,8 @@ public class ExtruderManager {
 
 	private static Map<ItemWrapper, ExtruderRecipe> recipeMapIgneous = new Object2ObjectOpenHashMap<>();
 	private static Map<ItemWrapper, ExtruderRecipe> recipeMapSedimentary = new Object2ObjectOpenHashMap<>();
-	private static List<ItemStack> outputListIgneous = new ArrayList<>();
-	private static List<ItemStack> outputListSedimentary = new ArrayList<>();
+	private static final List<ItemStack> outputListIgneous = new ArrayList<>();
+	private static final List<ItemStack> outputListSedimentary = new ArrayList<>();
 
 	public static final int DEFAULT_ENERGY = 800;
 

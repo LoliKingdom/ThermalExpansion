@@ -20,7 +20,7 @@ import java.util.Map.Entry;
 public class SawmillManager {
 
 	private static Map<ComparableItemStackValidatedNBT, SawmillRecipe> recipeMap = new Object2ObjectOpenHashMap<>();
-	private static OreValidator oreValidator = new OreValidator();
+	private static final OreValidator oreValidator = new OreValidator();
 
 	static {
 		oreValidator.addPrefix(ComparableItemStack.ORE);

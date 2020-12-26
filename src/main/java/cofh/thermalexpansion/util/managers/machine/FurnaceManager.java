@@ -21,7 +21,7 @@ public class FurnaceManager {
 	private static Map<ComparableItemStackValidated, FurnaceRecipe> recipeMap = new Object2ObjectOpenHashMap<>();
 	private static Map<ComparableItemStackValidated, FurnaceRecipe> recipeMapPyrolysis = new Object2ObjectOpenHashMap<>();
 	private static Set<ComparableItemStackValidated> foodSet = new ObjectOpenHashSet<>();
-	private static OreValidator oreValidator = new OreValidator();
+	private static final OreValidator oreValidator = new OreValidator();
 
 	static {
 		oreValidator.addPrefix(ComparableItemStack.ORE);

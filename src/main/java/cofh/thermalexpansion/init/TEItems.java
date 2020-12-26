@@ -2,6 +2,7 @@ package cofh.thermalexpansion.init;
 
 import cofh.core.util.core.IInitializer;
 import cofh.thermalexpansion.item.*;
+import cofh.thermalexpansion.item.tome.ItemTomeExperience;
 import cofh.thermalfoundation.init.TFProps;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -31,6 +32,8 @@ public class TEItems {
 		itemFlorb = new ItemFlorb();
 		itemMorb = new ItemMorb();
 
+		itemTomeExperience = new ItemTomeExperience();
+
 		initList.add(itemCapacitor);
 		initList.add(itemReservoir);
 		initList.add(itemSatchel);
@@ -40,6 +43,8 @@ public class TEItems {
 
 		initList.add(itemFlorb);
 		initList.add(itemMorb);
+
+		initList.add(itemTomeExperience);
 
 		for (IInitializer init : initList) {
 			init.preInit();
@@ -89,5 +94,7 @@ public class TEItems {
 
 	public static ItemFlorb itemFlorb;
 	public static ItemMorb itemMorb;
+
+	public static ItemTomeExperience itemTomeExperience;
 
 }

@@ -18,10 +18,10 @@ public class ReactantManager {
 
 	private static Map<List<Integer>, Reaction> reactionMap = new Object2ObjectOpenHashMap<>();
 	private static Set<ComparableItemStack> validReactants = new ObjectOpenHashSet<>();
-	private static Set<String> validFluids = new ObjectOpenHashSet<>();
+	private static final Set<String> validFluids = new ObjectOpenHashSet<>();
 
 	private static Set<ComparableItemStack> validReactantsElemental = new ObjectOpenHashSet<>();
-	private static Set<String> validFluidsElemental = new ObjectOpenHashSet<>();
+	private static final Set<String> validFluidsElemental = new ObjectOpenHashSet<>();
 
 	public static int DEFAULT_ENERGY = 100000;
 

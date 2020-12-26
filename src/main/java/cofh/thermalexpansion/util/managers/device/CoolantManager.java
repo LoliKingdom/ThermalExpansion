@@ -13,8 +13,8 @@ public class CoolantManager {
 	/**
 	 * Coolant is stored as RF effectiveness per bucket.
 	 */
-	private static Object2IntOpenHashMap<String> coolantMap = new Object2IntOpenHashMap<>();
-	private static Object2IntOpenHashMap<String> coolantFactorMap = new Object2IntOpenHashMap<>();
+	private static final Object2IntOpenHashMap<String> coolantMap = new Object2IntOpenHashMap<>();
+	private static final Object2IntOpenHashMap<String> coolantFactorMap = new Object2IntOpenHashMap<>();
 
 	public static final int WATER_RF = 250000;
 	public static final int WATER_FACTOR = 20;

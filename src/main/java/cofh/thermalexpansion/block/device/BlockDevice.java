@@ -16,10 +16,8 @@ import cofh.thermalexpansion.block.BlockTEBase;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.init.TETextures;
 import cofh.thermalexpansion.item.ItemFrame;
+import cofh.thermalexpansion.item.tome.ItemTomeExperience;
 import cofh.thermalexpansion.render.BakeryDevice;
-import cofh.thermalfoundation.item.ItemMaterial;
-import cofh.thermalfoundation.item.tome.ItemTomeExperience;
-import cofh.thermalfoundation.item.tome.ItemTomeLexicon;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -134,8 +132,6 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 				return new TileItemBuffer();
 			case FLUID_BUFFER:
 				return new TileFluidBuffer();
-			case LEXICON:
-				return new TileLexicon();
 			case XP_COLLECTOR:
 				return new TileXpCollector();
 			case DIFFUSER:
@@ -319,7 +315,6 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 		TileFisher.initialize();
 		TileItemBuffer.initialize();
 		TileFluidBuffer.initialize();
-		TileLexicon.initialize();
 		TileXpCollector.initialize();
 		TileDiffuser.initialize();
 		TileFactorizer.initialize();
@@ -341,7 +336,6 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 		deviceFisher = itemBlock.setDefaultTag(new ItemStack(this, 1, Type.FISHER.getMetadata()));
 		deviceItemBuffer = itemBlock.setDefaultTag(new ItemStack(this, 1, Type.ITEM_BUFFER.getMetadata()));
 		deviceFluidBuffer = itemBlock.setDefaultTag(new ItemStack(this, 1, Type.FLUID_BUFFER.getMetadata()));
-		deviceLexicon = itemBlock.setDefaultTag(new ItemStack(this, 1, Type.LEXICON.getMetadata()));
 		deviceExpCollector = itemBlock.setDefaultTag(new ItemStack(this, 1, Type.XP_COLLECTOR.getMetadata()));
 		deviceDiffuser = itemBlock.setDefaultTag(new ItemStack(this, 1, Type.DIFFUSER.getMetadata()));
 		deviceFactorizer = itemBlock.setDefaultTag(new ItemStack(this, 1, Type.FACTORIZER.getMetadata()));
@@ -366,7 +360,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', Items.BUCKET,
 					'Y', "blockGlass"
 			);
@@ -378,7 +372,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', new FluidIngredient("lava"),
 					'Y', Blocks.BRICK_BLOCK
 			);
@@ -390,7 +384,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', "ingotCopper",
 					'Y', "ingotInvar"
 			);
@@ -402,7 +396,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', "ingotCopper",
 					'Y', "plankWood"
 			);
@@ -414,7 +408,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', Items.FISHING_ROD,
 					'Y', Blocks.IRON_BARS
 			);
@@ -426,7 +420,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', "chestWood",
 					'Y', "ingotTin"
 			);
@@ -438,21 +432,9 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', "blockGlass",
 					'Y', "ingotCopper"
-			);
-		}
-		if (enable[Type.LEXICON.getMetadata()]) {
-			addShapedRecipe(deviceLexicon,
-					" X ",
-					"YCY",
-					"IPI",
-					'C', ItemFrame.frameDevice,
-					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
-					'X', ItemTomeLexicon.tomeLexicon,
-					'Y', "ingotLead"
 			);
 		}
 		if (enable[Type.XP_COLLECTOR.getMetadata()]) {
@@ -462,7 +444,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', ItemTomeExperience.tomeExperience,
 					'Y', "ingotGold"
 			);
@@ -474,7 +456,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', "blockGlassHardened",
 					'Y', "ingotSilver"
 			);
@@ -486,7 +468,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', "workbench",
 					'Y', "ingotLead"
 			);
@@ -498,7 +480,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', Blocks.DISPENSER,
 					'Y', "ingotConstantan"
 			);
@@ -510,7 +492,7 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 					"IPI",
 					'C', ItemFrame.frameDevice,
 					'I', ironPart,
-					'P', ItemMaterial.redstoneServo,
+					'P', "servoRedstone",
 					'X', Blocks.HOPPER,
 					'Y', "ingotTin"
 			);
@@ -529,13 +511,12 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 		FISHER(4, "fisher"),
 		ITEM_BUFFER(5, "item_buffer"),
 		FLUID_BUFFER(6, "fluid_buffer"),
-		LEXICON(7, "lexicon"),
-		XP_COLLECTOR(8, "xp_collector"),
-		DIFFUSER(9, "diffuser"),
-		FACTORIZER(10, "factorizer"),
-		MOB_CATCHER(11, "mob_catcher"),
-		ITEM_COLLECTOR(12, "item_collector"),
-		CHUNK_LOADER(13, "chunk_loader");
+		XP_COLLECTOR(7, "xp_collector"),
+		DIFFUSER(8, "diffuser"),
+		FACTORIZER(9, "factorizer"),
+		MOB_CATCHER(10, "mob_catcher"),
+		ITEM_COLLECTOR(11, "item_collector"),
+		CHUNK_LOADER(12, "chunk_loader");
 		// @formatter:on
 
 		private final int metadata;
@@ -569,7 +550,6 @@ public class BlockDevice extends BlockTEBase implements IModelRegister, IBakeryP
 	public static ItemStack deviceFisher;
 	public static ItemStack deviceItemBuffer;
 	public static ItemStack deviceFluidBuffer;
-	public static ItemStack deviceLexicon;
 	public static ItemStack deviceExpCollector;
 	public static ItemStack deviceDiffuser;
 	public static ItemStack deviceFactorizer;

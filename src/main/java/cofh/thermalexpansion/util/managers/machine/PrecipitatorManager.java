@@ -18,7 +18,7 @@ import java.util.Map.Entry;
 public class PrecipitatorManager {
 
 	private static Map<ItemWrapper, PrecipitatorRecipe> recipeMap = new Object2ObjectOpenHashMap<>();
-	private static List<ItemStack> outputList = new ArrayList<>();
+	private static final List<ItemStack> outputList = new ArrayList<>();
 
 	public static final int DEFAULT_ENERGY = 800;
 

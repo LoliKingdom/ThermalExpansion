@@ -20,7 +20,7 @@ public class BehaviorMorbDispense extends BehaviorDefaultDispenseItem {
 		EnumFacing facing = source.getBlockState().getValue(BlockDispenser.FACING);
 
 		EntityMorb morb = new EntityMorb(world, pos.getX(), pos.getY(), pos.getZ(), (byte) ItemHelper.getItemDamage(stack), stack.hasTagCompound() ? stack.getTagCompound() : new NBTTagCompound());
-		morb.shoot((double) facing.getFrontOffsetX(), (double) ((float) facing.getFrontOffsetY() + 0.1F), (double) facing.getFrontOffsetZ(), getProjectileVelocity(), getProjectileInaccuracy());
+		morb.shoot(facing.getFrontOffsetX(), (float) facing.getFrontOffsetY() + 0.1F, facing.getFrontOffsetZ(), getProjectileVelocity(), getProjectileInaccuracy());
 		world.spawnEntity(morb);
 		stack.shrink(1);
 		return stack;

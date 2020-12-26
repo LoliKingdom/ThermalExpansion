@@ -35,7 +35,7 @@ public class CentrifugeManager {
 
 	private static Map<ComparableItemStackValidatedNBT, CentrifugeRecipe> recipeMap = new Object2ObjectOpenHashMap<>();
 	private static Map<ComparableItemStackValidatedNBT, CentrifugeRecipe> recipeMapMobs = new Object2ObjectOpenHashMap<>();
-	private static OreValidator oreValidator = new OreValidator();
+	private static final OreValidator oreValidator = new OreValidator();
 
 	static {
 		oreValidator.addPrefix(ComparableItemStack.DUST);

@@ -29,7 +29,7 @@ public class SmelterManager {
 	private static Map<List<ComparableItemStackValidatedNBT>, SmelterRecipe> recipeMap = new Object2ObjectOpenHashMap<>();
 	private static Set<ComparableItemStackValidatedNBT> validationSet = new ObjectOpenHashSet<>();
 	private static Set<ComparableItemStackValidatedNBT> lockSet = new ObjectOpenHashSet<>();
-	private static OreValidator oreValidator = new OreValidator();
+	private static final OreValidator oreValidator = new OreValidator();
 
 	static {
 		oreValidator.addPrefix(ComparableItemStack.BLOCK);

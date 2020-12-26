@@ -178,7 +178,7 @@ public class TETextures {
 		CELL_METER_C =                      register(CELL_ + "meter_c");
 
 		CELL_CENTER_0 =                     register("blocks/redstone_block");
-		CELL_CENTER_1 =                     register("thermalfoundation:blocks/fluid/redstone_still");
+		CELL_CENTER_1 =                     register("zairyou:blocks/fluid/redstone_still");
 
 		/* TANKS */
 		TANK_BOTTOM_0_0 =                   register(TANK_ + "bottom_0_0");
@@ -267,7 +267,7 @@ public class TETextures {
 		STRONGBOX_TOP_C =                   register(STRONGBOX_ + "top_c");
 
 		/* LIGHTS */
-		ILLUMINATOR_CENTER_0 =              register("thermalfoundation:blocks/fluid/glowstone_still");
+		ILLUMINATOR_CENTER_0 =              register("zairyou:blocks/fluid/glowstone_still");
 		ILLUMINATOR_CENTER_1 =              register(BLOCKS_ + "light/illuminator_effect");
 		ILLUMINATOR_FRAME =                 register(BLOCKS_ + "light/illuminator_frame");
 		LAMP_CENTER =                       register(BLOCKS_ + "light/lamp_effect");

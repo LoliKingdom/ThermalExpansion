@@ -11,8 +11,6 @@ import cofh.core.util.helpers.ServerHelper;
 import cofh.core.util.helpers.StringHelper;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.init.TEProps;
-import cofh.thermalfoundation.item.ItemFertilizer;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -308,14 +306,14 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" I ",
 				"ICI",
 				" I ",
-				'C', ItemMaterial.powerCoilGold,
+				'C', "coilGold",
 				'I', "ingotGold"
 		);
 		addShapedRecipe(machineSecondary,
 				" I ",
 				"ICI",
 				" I ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'I', "ingotBronze"
 		);
 		addShapedRecipe(machineSecondaryNull,
@@ -331,7 +329,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.powerCoilElectrum,
+					'C', "coilElectrum",
 					'G', "gearCopper",
 					'I', "plateSilver",
 					'X', Blocks.BRICK_BLOCK
@@ -342,7 +340,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.powerCoilElectrum,
+					'C', "coilElectrum",
 					'G', "gearBronze",
 					'I', "plateInvar",
 					'X', "dustPyrotheum"
@@ -353,7 +351,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.redstoneServo,
+					'C', "servoRedstone",
 					'G', "gearInvar",
 					'I', "plateCopper",
 					'X', Blocks.NETHER_BRICK
@@ -364,7 +362,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 //				" G ",
 //				"ICI",
 //				" X ",
-//				'C', ItemMaterial.redstoneServo,
+//				'C', "servoRedstone",
 //				'G', "gearLead",
 //				'I', "plateBronze",
 //				'X', "gemDiamond",
@@ -374,7 +372,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.redstoneServo,
+					'C', "servoRedstone",
 					'G', "gearSignalum",
 					'I', "plateBronze",
 					'X', "dustPetrotheum"
@@ -385,7 +383,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearTin",
 				'I', "plateCopper",
 				'X', Items.BUCKET
@@ -395,9 +393,9 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearSilver",
-				'I', ItemMaterial.crystalSlagRich,
+				'I', "crystalSlagRich",
 				'X', "blockGlassHardened"
 		);
 		if (enableAugmentSmelterPyrotheum) {
@@ -405,7 +403,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.powerCoilElectrum,
+					'C', "coilElectrum",
 					'G', "gearSignalum",
 					'I', "plateNickel",
 					'X', "dustPyrotheum"
@@ -416,16 +414,16 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearSilver",
-				'I', ItemFertilizer.fertilizerRich,
+				'I', "fertilizerRich",
 				'X', "blockGlassHardened"
 		);
 		addShapedRecipe(machineInsolatorTree,
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearInvar",
 				'I', "plateLumium",
 				'X', Blocks.PISTON
@@ -434,10 +432,10 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearSignalum",
 				'I', "plateNickel",
-				'X', ItemFertilizer.fertilizerFlux
+				'X', "fertilizerFlux"
 		);
 
 		if (enableAugmentCompactorCoin) {
@@ -445,7 +443,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.redstoneServo,
+					'C', "servoRedstone",
 					'G', "gearInvar",
 					'I', "plateElectrum",
 					'X', "gemEmerald"
@@ -456,7 +454,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 						"ICI",
 					" X ",
-					'C', ItemMaterial.redstoneServo,
+					'C', "servoRedstone",
 					'G', "gearIron",
 					'I', "plateLead",
 					'X', Blocks.PISTON
@@ -467,7 +465,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearInvar",
 				'I', Blocks.PISTON,
 				'X', Blocks.NETHER_BRICK
@@ -476,7 +474,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 //				" G ",
 //				"ICI",
 //				" X ",
-//				'C', ItemMaterial.redstoneServo,
+//				'C', "servoRedstone",
 //				'G', "gearSignalum",
 //				'I', "plateInvar",
 //				'X', "dustCryotheum"
@@ -486,7 +484,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearConstantan",
 				'I', "blockGlassHardened",
 				'X', Items.BLAZE_ROD
@@ -495,7 +493,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 //				" G ",
 //				"ICI",
 //				" X ",
-//				'C', ItemMaterial.powerCoilElectrum,
+//				'C', "coilElectrum",
 //				'G', "gearBronze",
 //				'I', "blockGlassHardened",
 //				'X', "rodBlitz"
@@ -505,7 +503,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.powerCoilElectrum,
+					'C', "coilElectrum",
 					'G', "gearSignalum",
 					'I', "plateLead",
 					'X', Items.CAULDRON
@@ -516,7 +514,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearElectrum",
 				'I', "plateSilver",
 				'X', "ingotLead"
@@ -525,7 +523,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearIron",
 				'I', "blockGlassHardened",
 				'X', "blockIron"
@@ -534,7 +532,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearElectrum",
 				'I', "plateSilver",
 				'X', "blockGlassHardened"
@@ -544,7 +542,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearInvar",
 				'I', Items.DIAMOND_SWORD,
 				'X', Blocks.PISTON
@@ -554,7 +552,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearTin",
 				'I', "ingotIron",
 				'X', "blockGlass"
@@ -563,7 +561,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', Items.BUCKET,
 				'I', "ingotCopper",
 				'X', "blockGlass"
@@ -573,7 +571,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"YCZ",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearSilver",
 				'X', "blockGlass",
 				'Y', "dustGlowstone",
@@ -584,7 +582,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 //				" G ",
 //				"ICI",
 //				" X ",
-//				'C', ItemMaterial.powerCoilElectrum,
+//				'C', "coilElectrum",
 //				'G', "gearGold",
 //				'I', "gemDiamond",
 //				'X', "blockLapis"
@@ -594,7 +592,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.redstoneServo,
+				'C', "servoRedstone",
 				'G', "gearCopper",
 				'I', "plateInvar",
 				'X', "dustCryotheum"
@@ -604,7 +602,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 					" G ",
 					"ICI",
 					" X ",
-					'C', ItemMaterial.powerCoilElectrum,
+					'C', "coilElectrum",
 					'G', "gearNickel",
 					'I', "plateLead",
 					'X', "dustAerotheum"
@@ -616,14 +614,14 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" I ",
 				"ICI",
 				" I ",
-				'C', ItemMaterial.powerCoilSilver,
+				'C', "coilSilver",
 				'I', "ingotSilver"
 		);
 		addShapedRecipe(dynamoEfficiency,
 				" I ",
 				"ICI",
 				" I ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'I', "ingotLead"
 		);
 		addShapedRecipe(dynamoCoilDuct,
@@ -655,7 +653,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearIron",
 				'I', "plateCopper",
 				'X', "ingotIron"
@@ -665,7 +663,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearSignalum",
 				'I', "plateInvar",
 				'X', "dustCryotheum"
@@ -675,7 +673,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearInvar",
 				'I', "plateTin",
 				'X', "dustCryotheum"
@@ -684,7 +682,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearSignalum",
 				'I', "plateCopper",
 				'X', "dustPyrotheum"
@@ -693,7 +691,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearBronze",
 				'I', "plateConstantan",
 				'X', "dustAerotheum"
@@ -703,7 +701,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearSignalum",
 				'I', "plateLead",
 				'X', "dustAerotheum"
@@ -713,7 +711,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearSignalum",
 				'I', "plateGold",
 				'X', "gemLapis"
@@ -723,7 +721,7 @@ public class ItemAugment extends ItemMulti implements IInitializer, IAugmentItem
 				" G ",
 				"ICI",
 				" X ",
-				'C', ItemMaterial.powerCoilElectrum,
+				'C', "coilElectrum",
 				'G', "gearSignalum",
 				'I', "plateElectrum",
 				'X', "gemEmerald"

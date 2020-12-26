@@ -3,8 +3,6 @@ package cofh.thermalexpansion.plugins;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalexpansion.util.managers.device.TapperManager;
 import cofh.thermalexpansion.util.managers.machine.*;
-import cofh.thermalfoundation.init.TFFluids;
-import cofh.thermalfoundation.item.ItemMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -12,6 +10,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 public class PluginBiomesOPlenty extends PluginTEBase {
 
@@ -119,10 +120,10 @@ public class PluginBiomesOPlenty extends PluginTEBase {
 			int energy = PulverizerManager.DEFAULT_ENERGY * 3 / 4;
 
 			for (int i = 0; i < 3; i++) {
-				PulverizerManager.addRecipe(energy, new ItemStack(getBlock("white_sandstone"), 1, i), ItemHelper.cloneStack(sandWhite, 2), ItemMaterial.dustNiter, 40);
+				PulverizerManager.addRecipe(energy, new ItemStack(getBlock("white_sandstone"), 1, i), ItemHelper.cloneStack(sandWhite, 2), Materials.NITER.getStack(ItemMaterialType.DUST, 1), 40);
 			}
-			PulverizerManager.addRecipe(energy, new ItemStack(getBlock("white_sandstone_stairs")), ItemHelper.cloneStack(sandWhite, 2), ItemMaterial.dustNiter, 20);
-			PulverizerManager.addRecipe(energy, new ItemStack(getBlock("other_slab"), 1, 1), ItemHelper.cloneStack(sandWhite, 1), ItemMaterial.dustNiter, 20);
+			PulverizerManager.addRecipe(energy, new ItemStack(getBlock("white_sandstone_stairs")), ItemHelper.cloneStack(sandWhite, 2), Materials.NITER.getStack(ItemMaterialType.DUST, 1), 20);
+			PulverizerManager.addRecipe(energy, new ItemStack(getBlock("other_slab"), 1, 1), ItemHelper.cloneStack(sandWhite, 1), Materials.NITER.getStack(ItemMaterialType.DUST, 1), 20);
 
 			/* PLANTS */
 			energy = PulverizerManager.DEFAULT_ENERGY / 2;
@@ -335,29 +336,29 @@ public class PluginBiomesOPlenty extends PluginTEBase {
 			// Yellow Autumn
 			// Orange Autumn
 			TapperManager.addStandardMapping(logBamboo, new FluidStack(FluidRegistry.WATER, 25));
-			TapperManager.addStandardMapping(logMagic, new FluidStack(TFFluids.fluidResin, 25));    // TODO: Mana
-			TapperManager.addStandardMapping(logUmbral, new FluidStack(TFFluids.fluidResin, 50));
+			TapperManager.addStandardMapping(logMagic, Materials.RESIN.getStack(FluidType.LIQUID, 25));    // TODO: Mana
+			TapperManager.addStandardMapping(logUmbral, Materials.RESIN.getStack(FluidType.LIQUID, 50));
 			// Dead
-			TapperManager.addStandardMapping(logFir, new FluidStack(TFFluids.fluidResin, 50));
+			TapperManager.addStandardMapping(logFir, Materials.RESIN.getStack(FluidType.LIQUID, 50));
 			// Ethereal
 
 			// Origin
-			TapperManager.addStandardMapping(logCherry, new FluidStack(TFFluids.fluidSap, 50));
+			TapperManager.addStandardMapping(logCherry, Materials.SAP.getStack(FluidType.LIQUID, 50));
 			// White Cherry
 			// Maple
 			// TapperManager.addStandardMapping(logHellbark, new FluidStack(TFFluids.fluidSap, 50));
 			// Flowering Oak
-			TapperManager.addStandardMapping(logJacaranda, new FluidStack(TFFluids.fluidSap, 50));
+			TapperManager.addStandardMapping(logJacaranda, Materials.SAP.getStack(FluidType.LIQUID, 50));
 			// TapperManager.addStandardMapping(logSacredOak, new FluidStack(TFFluids.fluidSap, 50));       // TODO: Allow?
 
-			TapperManager.addStandardMapping(logMangrove, new FluidStack(TFFluids.fluidResin, 50));
+			TapperManager.addStandardMapping(logMangrove, Materials.RESIN.getStack(FluidType.LIQUID, 50));
 			// TapperManager.addStandardMapping(logPalm, new FluidStack(TFFluids.fluidSap, 25));            // TODO: Allow?
 			// TapperManager.addStandardMapping(logRedwood, new FluidStack(TFFluids.fluidResin, 50));       // TODO: Allow?
-			TapperManager.addStandardMapping(logWillow, new FluidStack(TFFluids.fluidResin, 50));
-			TapperManager.addStandardMapping(logPine, new FluidStack(TFFluids.fluidResin, 100));
-			TapperManager.addStandardMapping(logMahogany, new FluidStack(TFFluids.fluidResin, 25));
-			TapperManager.addStandardMapping(logEbony, new FluidStack(TFFluids.fluidResin, 25));
-			TapperManager.addStandardMapping(logEucalyptus, new FluidStack(TFFluids.fluidResin, 50));
+			TapperManager.addStandardMapping(logWillow, Materials.RESIN.getStack(FluidType.LIQUID, 50));
+			TapperManager.addStandardMapping(logPine, Materials.RESIN.getStack(FluidType.LIQUID, 100));
+			TapperManager.addStandardMapping(logMahogany, Materials.RESIN.getStack(FluidType.LIQUID, 25));
+			TapperManager.addStandardMapping(logEbony, Materials.RESIN.getStack(FluidType.LIQUID, 25));
+			TapperManager.addStandardMapping(logEucalyptus, Materials.RESIN.getStack(FluidType.LIQUID, 50));
 
 			addLeafMapping(Blocks.LOG, 2, blockLeaves0, 8);
 			addLeafMapping(Blocks.LOG2, 1, blockLeaves0, 9);

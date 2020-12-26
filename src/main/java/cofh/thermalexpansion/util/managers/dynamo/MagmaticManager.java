@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class MagmaticManager {
 
-	private static Object2IntOpenHashMap<String> fuelMap = new Object2IntOpenHashMap<>();
+	private static final Object2IntOpenHashMap<String> fuelMap = new Object2IntOpenHashMap<>();
 
 	public static int DEFAULT_ENERGY = 100000;
 

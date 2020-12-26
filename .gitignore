@@ -183,3 +183,5 @@ MFR-Forestry
 nbproject
 *.eml
 *.iml
+
+libs/

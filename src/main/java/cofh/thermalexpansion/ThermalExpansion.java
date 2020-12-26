@@ -15,7 +15,6 @@ import cofh.thermalexpansion.util.managers.device.*;
 import cofh.thermalexpansion.util.managers.dynamo.*;
 import cofh.thermalexpansion.util.managers.machine.*;
 import cofh.thermalexpansion.util.parsers.ContentParser;
-import cofh.thermalfoundation.ThermalFoundation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -41,7 +40,7 @@ public class ThermalExpansion {
 	public static final String VERSION_GROUP = "required-after:" + MOD_ID + "@[" + VERSION + "," + VERSION_MAX + ");";
 	public static final String UPDATE_URL = "https://raw.github.com/cofh/version/master/" + MOD_ID + "_update.json";
 
-	public static final String DEPENDENCIES = CoFHCore.VERSION_GROUP + ThermalFoundation.VERSION_GROUP + CodeChickenLib.MOD_VERSION_DEP + "before:enderio";
+	public static final String DEPENDENCIES = CoFHCore.VERSION_GROUP + CodeChickenLib.MOD_VERSION_DEP + "before:enderio";
 	public static final String MOD_GUI_FACTORY = "cofh.thermalexpansion.gui.GuiConfigTEFactory";
 
 	@Instance (MOD_ID)

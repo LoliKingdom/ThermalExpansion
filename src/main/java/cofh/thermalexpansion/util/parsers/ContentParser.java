@@ -27,9 +27,9 @@ import java.util.Map.Entry;
 
 public class ContentParser {
 
-	private static Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 	private static File contentFolder;
-	private static Map<String, IContentParser> contentParsers = new Object2ObjectOpenHashMap<>();
+	private static final Map<String, IContentParser> contentParsers = new Object2ObjectOpenHashMap<>();
 
 	private ContentParser() {
 

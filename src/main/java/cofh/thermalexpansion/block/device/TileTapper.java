@@ -18,7 +18,6 @@ import cofh.thermalexpansion.init.TEBlocks;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.init.TETextures;
 import cofh.thermalexpansion.util.managers.device.TapperManager;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -40,6 +39,8 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -88,7 +89,7 @@ public class TileTapper extends TileDeviceBase implements ITickable {
 
 	private int timeConstant = TIME_CONSTANT;
 
-	private FluidStack genFluid = new FluidStack(TFFluids.fluidResin, 50);
+	private FluidStack genFluid = Materials.RESIN.getStack(FluidType.LIQUID, 50);
 
 	private boolean cached;
 
