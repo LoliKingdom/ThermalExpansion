@@ -23,9 +23,6 @@ import cofh.thermalexpansion.item.ItemMorb;
 import cofh.thermalexpansion.network.PacketTEBase;
 import cofh.thermalexpansion.network.PacketTEBase.PacketTypes;
 import cofh.thermalexpansion.util.UnlistedGenericProperty;
-import cofh.thermalfoundation.ThermalFoundation;
-import cofh.thermalfoundation.init.TFProps;
-import cofh.thermalfoundation.item.ItemMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
@@ -33,6 +30,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 public class TEProps {
 
@@ -145,90 +144,77 @@ public class TEProps {
 		}
 
 		/* CREATIVE TABS */
-		if (TFProps.useUnifiedTabs) {
-			ThermalExpansion.tabCommon = ThermalFoundation.tabCommon;
-			ThermalExpansion.tabItems = ThermalFoundation.tabItems;
-			ThermalExpansion.tabUtils = ThermalFoundation.tabUtils;
+		ThermalExpansion.tabCommon = new CreativeTabCore("thermalexpansion") {
 
-			TFProps.initToolTab();
-			ThermalExpansion.tabTools = ThermalFoundation.tabTools;
+			@Override
+			@SideOnly (Side.CLIENT)
+			public ItemStack getTabIconItem() {
 
-			TFProps.initMiscTab();
-			ThermalExpansion.tabFlorbs = ThermalFoundation.tabMisc;
-			ThermalExpansion.tabMorbs = ThermalFoundation.tabMisc;
-		} else {
-			ThermalExpansion.tabCommon = new CreativeTabCore("thermalexpansion") {
-
-				@Override
-				@SideOnly (Side.CLIENT)
-				public ItemStack getTabIconItem() {
-
-					return BlockMachine.machineFurnace;
-				}
-			};
-
-			if (itemTabCommon) {
-				ThermalExpansion.tabItems = ThermalExpansion.tabCommon;
-			} else {
-				ThermalExpansion.tabItems = new CreativeTabCore("thermalexpansion", "Items") {
-
-					@Override
-					@SideOnly (Side.CLIENT)
-					public ItemStack getTabIconItem() {
-
-						return ItemMaterial.powerCoilElectrum;
-					}
-				};
+				return BlockMachine.machineFurnace;
 			}
-			ThermalExpansion.tabFlorbs = florbTabCommon || creativeTabHideFlorbs ? ThermalExpansion.tabCommon : new CreativeTabCore("thermalexpansion", "Florbs") {
+		};
 
-				int iconIndex = 0;
-				TimeTracker iconTracker = new TimeTracker();
-
-				public void updateIcon() {
-
-					World world = CoFHCore.proxy.getClientWorld();
-					if (CoreUtils.isClient() && iconTracker.hasDelayPassed(world, 80)) {
-						int next = MathHelper.RANDOM.nextInt(ItemFlorb.florbList.size() - 1);
-						iconIndex = next >= iconIndex ? next + 1 : next;
-						iconTracker.markTime(world);
-					}
-				}
+		if (itemTabCommon) {
+			ThermalExpansion.tabItems = ThermalExpansion.tabCommon;
+		} else {
+			ThermalExpansion.tabItems = new CreativeTabCore("thermalexpansion", "Items") {
 
 				@Override
 				@SideOnly (Side.CLIENT)
 				public ItemStack getTabIconItem() {
 
-					updateIcon();
-					return ItemFlorb.florbList.get(iconIndex);
+					return Materials.ELECTRUM.getStack(ItemMaterialType.COIL, 1);
 				}
 			};
-			ThermalExpansion.tabMorbs = morbTabCommon || creativeTabHideMorbs ? ThermalExpansion.tabCommon : new CreativeTabCore("thermalexpansion", "Morbs") {
-
-				int iconIndex = 0;
-				TimeTracker iconTracker = new TimeTracker();
-
-				public void updateIcon() {
-
-					World world = CoFHCore.proxy.getClientWorld();
-					if (CoreUtils.isClient() && iconTracker.hasDelayPassed(world, 80)) {
-						int next = MathHelper.RANDOM.nextInt(ItemMorb.morbList.size() - 1);
-						iconIndex = next >= iconIndex ? next + 1 : next;
-						iconTracker.markTime(world);
-					}
-				}
-
-				@Override
-				@SideOnly (Side.CLIENT)
-				public ItemStack getTabIconItem() {
-
-					updateIcon();
-					return ItemMorb.morbList.get(iconIndex);
-				}
-			};
-			ThermalExpansion.tabUtils = ThermalExpansion.tabItems;
-			ThermalExpansion.tabTools = ThermalExpansion.tabItems;
 		}
+		ThermalExpansion.tabFlorbs = florbTabCommon || creativeTabHideFlorbs ? ThermalExpansion.tabCommon : new CreativeTabCore("thermalexpansion", "Florbs") {
+
+			int iconIndex = 0;
+			TimeTracker iconTracker = new TimeTracker();
+
+			public void updateIcon() {
+
+				World world = CoFHCore.proxy.getClientWorld();
+				if (CoreUtils.isClient() && iconTracker.hasDelayPassed(world, 80)) {
+					int next = MathHelper.RANDOM.nextInt(ItemFlorb.florbList.size() - 1);
+					iconIndex = next >= iconIndex ? next + 1 : next;
+					iconTracker.markTime(world);
+				}
+			}
+
+			@Override
+			@SideOnly (Side.CLIENT)
+			public ItemStack getTabIconItem() {
+
+				updateIcon();
+				return ItemFlorb.florbList.get(iconIndex);
+			}
+		};
+		ThermalExpansion.tabMorbs = morbTabCommon || creativeTabHideMorbs ? ThermalExpansion.tabCommon : new CreativeTabCore("thermalexpansion", "Morbs") {
+
+			int iconIndex = 0;
+			TimeTracker iconTracker = new TimeTracker();
+
+			public void updateIcon() {
+
+				World world = CoFHCore.proxy.getClientWorld();
+				if (CoreUtils.isClient() && iconTracker.hasDelayPassed(world, 80)) {
+					int next = MathHelper.RANDOM.nextInt(ItemMorb.morbList.size() - 1);
+					iconIndex = next >= iconIndex ? next + 1 : next;
+					iconTracker.markTime(world);
+				}
+			}
+
+			@Override
+			@SideOnly (Side.CLIENT)
+			public ItemStack getTabIconItem() {
+
+				updateIcon();
+				return ItemMorb.morbList.get(iconIndex);
+			}
+		};
+		ThermalExpansion.tabUtils = ThermalExpansion.tabItems;
+		ThermalExpansion.tabTools = ThermalExpansion.tabItems;
 	}
 
 	public static PacketBase getConfigSync() {
