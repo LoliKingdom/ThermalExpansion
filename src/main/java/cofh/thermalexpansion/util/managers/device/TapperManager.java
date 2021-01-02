@@ -4,8 +4,6 @@ import cofh.core.inventory.ComparableItemStack;
 import cofh.core.util.BlockWrapper;
 import cofh.core.util.ItemWrapper;
 import cofh.core.util.helpers.ItemHelper;
-import cofh.thermalfoundation.init.TFFluids;
-import cofh.thermalfoundation.item.ItemFertilizer;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.SetMultimap;
 import gnu.trove.iterator.TObjectIntIterator;
@@ -18,7 +16,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.api.material.Material;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -31,7 +34,7 @@ public class TapperManager {
 	private static SetMultimap<BlockWrapper, BlockWrapper> leafMap = HashMultimap.create();
 	private static TObjectIntHashMap<ComparableItemStack> fertilizerMap = new TObjectIntHashMap<>();
 
-	public static FluidStack DEFAULT_FLUID = new FluidStack(TFFluids.fluidResin, 0);
+	public static FluidStack DEFAULT_FLUID = Materials.RESIN.getStack(FluidType.LIQUID, 0);
 	public static final int ITEM_FLUID_FACTOR = 5;
 
 	public static FluidStack getFluid(IBlockState state) {
@@ -71,15 +74,15 @@ public class TapperManager {
 
 	public static void initialize() {
 
-		FluidStack sap = new FluidStack(TFFluids.fluidSap, 50);
-		FluidStack resin = new FluidStack(TFFluids.fluidResin, 50);
-		FluidStack mushroom_stew = new FluidStack(TFFluids.fluidMushroomStew, 50);
+		Fluid sap = Materials.SAP.getFluid(FluidType.LIQUID);
+		Fluid resin = Materials.RESIN.getFluid(FluidType.LIQUID);
+		Fluid mushroom_stew = Materials.MUSHROOM_STEW.getFluid(FluidType.LIQUID);
 
 		/* FERTILIZER */
 		{
-			addFertilizer(ItemFertilizer.fertilizerBasic, 2);
-			addFertilizer(ItemFertilizer.fertilizerRich, 3);
-			addFertilizer(ItemFertilizer.fertilizerFlux, 4);
+			addFertilizer(Material.BASIC.getStack(ItemMaterialType.FERTILIZER, 1), 2);
+			addFertilizer(Materials.RICH.getStack(ItemMaterialType.FERTILIZER, 1), 3);
+			addFertilizer(Materials.FLUX.getStack(ItemMaterialType.FERTILIZER, 1), 4);
 		}
 
 		/* FLUIDS */

@@ -13,7 +13,6 @@ import cofh.thermalexpansion.gui.client.device.GuiXpCollector;
 import cofh.thermalexpansion.gui.container.device.ContainerXpCollector;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.util.managers.device.XpCollectorManager;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -30,6 +29,8 @@ import net.minecraftforge.fluids.capability.FluidTankProperties;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -93,7 +94,7 @@ public class TileXpCollector extends TileDeviceBase implements ITickable {
 		createAllSlots(inventory.length);
 
 		offset = MathHelper.RANDOM.nextInt(TIME_CONSTANT);
-		tank.setLock(TFFluids.fluidExperience);
+		tank.setLock(Materials.EXPERIENCE.getFluid(FluidType.LIQUID));
 
 		hasAutoInput = true;
 		hasAutoOutput = true;

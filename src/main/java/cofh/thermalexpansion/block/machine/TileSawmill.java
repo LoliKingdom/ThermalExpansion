@@ -18,7 +18,6 @@ import cofh.thermalexpansion.init.TESounds;
 import cofh.thermalexpansion.util.managers.device.TapperManager;
 import cofh.thermalexpansion.util.managers.machine.SawmillManager;
 import cofh.thermalexpansion.util.managers.machine.SawmillManager.SawmillRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -34,6 +33,8 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -96,7 +97,7 @@ public class TileSawmill extends TileMachineBase {
 	private int outputTrackerFluid;
 
 	private FluidTankCore tank = new FluidTankCore(TEProps.MAX_FLUID_SMALL);
-	private FluidStack renderFluid = new FluidStack(TFFluids.fluidResin, 0);
+	private FluidStack renderFluid = Materials.RESIN.getStack(FluidType.LIQUID, 0);
 
 	/* AUGMENTS */
 	protected boolean augmentTapper;

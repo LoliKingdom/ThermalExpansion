@@ -17,7 +17,6 @@ import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.init.TETextures;
 import cofh.thermalexpansion.util.managers.machine.EnchanterManager;
 import cofh.thermalexpansion.util.managers.machine.EnchanterManager.EnchanterRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -34,6 +33,8 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -104,7 +105,7 @@ public class TileEnchanter extends TileMachineBase {
 		inventory = new ItemStack[2 + 1 + 1];
 		Arrays.fill(inventory, ItemStack.EMPTY);
 		createAllSlots(inventory.length);
-		tank.setLock(TFFluids.fluidExperience);
+		tank.setLock(Materials.EXPERIENCE.getFluid(FluidType.LIQUID));
 	}
 
 	@Override
@@ -434,7 +435,7 @@ public class TileEnchanter extends TileMachineBase {
 			} else if (side == 1) {
 				return TETextures.MACHINE_TOP;
 			}
-			return side != facing ? TETextures.MACHINE_SIDE : isActive ? RenderHelper.getFluidTexture(TFFluids.fluidExperience) : TETextures.MACHINE_FACE[TYPE];
+			return side != facing ? TETextures.MACHINE_SIDE : isActive ? RenderHelper.getFluidTexture(Materials.EXPERIENCE.getFluid(FluidType.LIQUID)) : TETextures.MACHINE_FACE[TYPE];
 		} else if (side < 6) {
 			return side != facing ? TETextures.CONFIG[sideConfig.sideTypes[sideCache[side]]] : isActive ? TETextures.MACHINE_ACTIVE[TYPE] : TETextures.MACHINE_FACE[TYPE];
 		}
@@ -463,8 +464,13 @@ public class TileEnchanter extends TileMachineBase {
 
 				@Override
 				public int fill(FluidStack resource, boolean doFill) {
-
-					return tank.fill(TFFluids.getXPFluid(resource), doFill);
+					FluidStack fillResource;
+					if (resource.getFluid().getName().equals(CoreProps.ESSENCE)) {
+						fillResource = new FluidStack(Materials.EXPERIENCE.getFluid(FluidType.LIQUID), resource.amount);
+					} else {
+						fillResource = resource;
+					}
+					return tank.fill(fillResource, doFill);
 					//					if (from == null || allowInsertion(sideConfig.sideTypes[sideCache[from.ordinal()]])) {
 					//						FluidStack toFill = TFFluids.getXPFluid(resource);
 					//						return tank.fill(toFill, doFill);
