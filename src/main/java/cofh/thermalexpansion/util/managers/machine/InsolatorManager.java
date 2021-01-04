@@ -11,7 +11,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import zone.rong.zairyou.api.material.Material;
-import zone.rong.zairyou.api.material.type.MaterialType;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -343,13 +344,13 @@ public class InsolatorManager {
 	public static void addDefaultRecipe(int energy, int water, ItemStack primaryInput, ItemStack primaryOutput, ItemStack secondaryOutput, int secondaryChance, int secondaryChanceRich, int secondaryChanceFlux, Type type) {
 
 		if (!secondaryOutput.isEmpty()) {
-			addRecipe(energy, water, primaryInput, Material.BASIC.getStack(MaterialType.FERTILIZER, 1), primaryOutput, secondaryOutput, secondaryChance, type);
-			addRecipe(energy * 3 / 2, water * 3 / 2, primaryInput, Material.RICH.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), secondaryOutput, secondaryChanceRich, type);
-			addRecipe(energy * 2, water * 2, primaryInput, Material.FLUX.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), secondaryOutput, secondaryChanceFlux, type);
+			addRecipe(energy, water, primaryInput, Material.BASIC.getStack(ItemMaterialType.FERTILIZER, 1), primaryOutput, secondaryOutput, secondaryChance, type);
+			addRecipe(energy * 3 / 2, water * 3 / 2, primaryInput, Materials.RICH.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), secondaryOutput, secondaryChanceRich, type);
+			addRecipe(energy * 2, water * 2, primaryInput, Materials.FLUX.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), secondaryOutput, secondaryChanceFlux, type);
 		} else {
-			addRecipe(energy, water, primaryInput, Material.BASIC.getStack(MaterialType.FERTILIZER, 1), primaryOutput, ItemStack.EMPTY, 0, type);
-			addRecipe(energy * 3 / 2, water * 3 / 2, primaryInput, Material.RICH.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), ItemStack.EMPTY, 0, type);
-			addRecipe(energy * 2, water * 2, primaryInput, Material.FLUX.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), ItemStack.EMPTY, 0, type);
+			addRecipe(energy, water, primaryInput, Material.BASIC.getStack(ItemMaterialType.FERTILIZER, 1), primaryOutput, ItemStack.EMPTY, 0, type);
+			addRecipe(energy * 3 / 2, water * 3 / 2, primaryInput, Materials.RICH.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), ItemStack.EMPTY, 0, type);
+			addRecipe(energy * 2, water * 2, primaryInput, Materials.FLUX.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), ItemStack.EMPTY, 0, type);
 		}
 	}
 
@@ -361,13 +362,13 @@ public class InsolatorManager {
 	public static void addDefaultTreeRecipe(int energy, ItemStack primaryInput, ItemStack primaryOutput, ItemStack secondaryOutput, int secondaryChance) {
 
 		if (!secondaryOutput.isEmpty()) {
-			addRecipe(energy * 2, primaryInput, Material.BASIC.getStack(MaterialType.FERTILIZER, 1), primaryOutput, secondaryOutput, secondaryChance, Type.TREE);
-			addRecipe(energy * 2 * 3 / 2, primaryInput, Material.RICH.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), secondaryOutput, Math.min(secondaryChance * CROP_MULTIPLIER_RICH, 125), Type.TREE);
-			addRecipe(energy * 2 * 2, primaryInput, Material.FLUX.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), secondaryOutput, Math.min(secondaryChance * CROP_MULTIPLIER_FLUX, 150), Type.TREE);
+			addRecipe(energy * 2, primaryInput, Material.BASIC.getStack(ItemMaterialType.FERTILIZER, 1), primaryOutput, secondaryOutput, secondaryChance, Type.TREE);
+			addRecipe(energy * 2 * 3 / 2, primaryInput, Materials.RICH.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), secondaryOutput, Math.min(secondaryChance * CROP_MULTIPLIER_RICH, 125), Type.TREE);
+			addRecipe(energy * 2 * 2, primaryInput, Materials.FLUX.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), secondaryOutput, Math.min(secondaryChance * CROP_MULTIPLIER_FLUX, 150), Type.TREE);
 		} else {
-			addRecipe(energy * 2, primaryInput, Material.BASIC.getStack(MaterialType.FERTILIZER, 1), primaryOutput, ItemStack.EMPTY, 0, Type.TREE);
-			addRecipe(energy * 2 * 3 / 2, primaryInput, Material.RICH.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), ItemStack.EMPTY, 0, Type.TREE);
-			addRecipe(energy * 2 * 2, primaryInput, Material.FLUX.getStack(MaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), ItemStack.EMPTY, 0, Type.TREE);
+			addRecipe(energy * 2, primaryInput, Material.BASIC.getStack(ItemMaterialType.FERTILIZER, 1), primaryOutput, ItemStack.EMPTY, 0, Type.TREE);
+			addRecipe(energy * 2 * 3 / 2, primaryInput, Materials.RICH.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_RICH), ItemStack.EMPTY, 0, Type.TREE);
+			addRecipe(energy * 2 * 2, primaryInput, Materials.FLUX.getStack(ItemMaterialType.FERTILIZER, 1), ItemHelper.cloneStack(primaryOutput, primaryOutput.getCount() * CROP_MULTIPLIER_FLUX), ItemStack.EMPTY, 0, Type.TREE);
 		}
 	}
 

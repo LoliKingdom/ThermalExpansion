@@ -6,8 +6,8 @@ import cofh.thermalexpansion.util.managers.machine.InsolatorManager;
 import cofh.thermalexpansion.util.managers.machine.PulverizerManager;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import zone.rong.zairyou.api.material.Material;
-import zone.rong.zairyou.api.material.type.MaterialType;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 public class PluginAstralSorcery extends PluginTEBase {
 
@@ -34,7 +34,7 @@ public class PluginAstralSorcery extends PluginTEBase {
 
 		/* INSOLATOR */
 		{
-			InsolatorManager.addRecipe(120000, 4000, faintAmaranth, Material.FLUX.getStack(MaterialType.FERTILIZER, 1), new ItemStack(Items.GLOWSTONE_DUST), faintAmaranth, 100);
+			InsolatorManager.addRecipe(120000, 4000, faintAmaranth, Materials.FLUX.getStack(ItemMaterialType.FERTILIZER, 1), new ItemStack(Items.GLOWSTONE_DUST), faintAmaranth, 100);
 		}
 
 		/* ENCHANTER */
