@@ -8,9 +8,6 @@ import cofh.core.util.helpers.ColorHelper;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalexpansion.init.TEItems;
 import cofh.thermalexpansion.item.ItemMorb;
-import cofh.thermalfoundation.init.TFFluids;
-import cofh.thermalfoundation.init.TFItems;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -20,6 +17,9 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -95,6 +95,8 @@ public class CentrifugeManager {
 		addRecipe(energy, new ItemStack(Items.MAGMA_CREAM), asList(new ItemStack(Items.SLIME_BALL), new ItemStack(Items.BLAZE_POWDER)), null);
 		addRecipe(energy, new ItemStack(Items.REEDS), singletonList(new ItemStack(Items.SUGAR, 2)), new FluidStack(FluidRegistry.WATER, Fluid.BUCKET_VOLUME / 4));
 
+		// TODO
+		/*
 		addRecipe(energy * 2, ItemHelper.cloneStack(ItemMaterial.dustElectrum, 2), asList(ItemHelper.cloneStack(ItemMaterial.dustGold), ItemHelper.cloneStack(ItemMaterial.dustSilver)), null);
 		addRecipe(energy * 3, ItemHelper.cloneStack(ItemMaterial.dustInvar, 3), asList(ItemHelper.cloneStack(ItemMaterial.dustIron, 2), ItemHelper.cloneStack(ItemMaterial.dustNickel)), null);
 		addRecipe(energy * 4, ItemHelper.cloneStack(ItemMaterial.dustBronze, 4), asList(ItemHelper.cloneStack(ItemMaterial.dustCopper, 3), ItemHelper.cloneStack(ItemMaterial.dustTin)), null);
@@ -102,13 +104,16 @@ public class CentrifugeManager {
 		addRecipe(energy * 4, ItemHelper.cloneStack(ItemMaterial.dustSignalum, 4), asList(ItemHelper.cloneStack(ItemMaterial.dustCopper, 3), ItemHelper.cloneStack(ItemMaterial.dustSilver)), new FluidStack(TFFluids.fluidRedstone, Fluid.BUCKET_VOLUME));
 		addRecipe(energy * 4, ItemHelper.cloneStack(ItemMaterial.dustLumium, 4), asList(ItemHelper.cloneStack(ItemMaterial.dustTin, 3), ItemHelper.cloneStack(ItemMaterial.dustSilver)), new FluidStack(TFFluids.fluidGlowstone, Fluid.BUCKET_VOLUME));
 		addRecipe(energy * 4, ItemHelper.cloneStack(ItemMaterial.dustEnderium, 4), asList(ItemHelper.cloneStack(ItemMaterial.dustLead, 3), ItemHelper.cloneStack(ItemMaterial.dustPlatinum)), new FluidStack(TFFluids.fluidEnder, Fluid.BUCKET_VOLUME));
+		 */
 
-		addRecipe(energy * 2, ItemHelper.cloneStack(ItemMaterial.dustPyrotheum, 2), asList(ItemHelper.cloneStack(Items.BLAZE_POWDER, 2), ItemHelper.cloneStack(ItemMaterial.dustSulfur), new ItemStack(Items.REDSTONE)), null);
-		addRecipe(energy * 2, ItemHelper.cloneStack(ItemMaterial.dustCryotheum, 2), asList(ItemHelper.cloneStack(ItemMaterial.dustBlizz, 2), ItemHelper.cloneStack(Items.SNOWBALL), new ItemStack(Items.REDSTONE)), null);
-		addRecipe(energy * 2, ItemHelper.cloneStack(ItemMaterial.dustAerotheum, 2), asList(ItemHelper.cloneStack(ItemMaterial.dustBlitz, 2), ItemHelper.cloneStack(ItemMaterial.dustNiter), new ItemStack(Items.REDSTONE)), null);
-		addRecipe(energy * 2, ItemHelper.cloneStack(ItemMaterial.dustPetrotheum, 2), asList(ItemHelper.cloneStack(ItemMaterial.dustBasalz, 2), ItemHelper.cloneStack(ItemMaterial.dustObsidian), new ItemStack(Items.REDSTONE)), null);
+		addRecipe(energy * 2, Materials.PYROTHEUM.getStack(ItemMaterialType.DUST, 2), asList(ItemHelper.cloneStack(Items.BLAZE_POWDER, 2), Materials.SULFUR.getItem(ItemMaterialType.DUST, true), new ItemStack(Items.REDSTONE)), null);
+		addRecipe(energy * 2, Materials.CRYOTHEUM.getStack(ItemMaterialType.DUST, 2), asList(Materials.BLIZZ.getStack(ItemMaterialType.DUST, 2), ItemHelper.cloneStack(Items.SNOWBALL), new ItemStack(Items.REDSTONE)), null);
+		addRecipe(energy * 2, Materials.AEROTHEUM.getStack(ItemMaterialType.DUST, 2), asList(Materials.BLITZ.getStack(ItemMaterialType.DUST, 2), Materials.NITER.getItem(ItemMaterialType.DUST, true), new ItemStack(Items.REDSTONE)), null);
+		addRecipe(energy * 2, Materials.PETROTHEUM.getStack(ItemMaterialType.DUST, 2), asList(Materials.BASALZ.getStack(ItemMaterialType.DUST, 2), Materials.OBSIDIAN.getItem(ItemMaterialType.DUST, true), new ItemStack(Items.REDSTONE)), null);
 
 		/* CONCRETE POWDER */
+		// TODO
+		/*
 		{
 			ItemStack gravel = new ItemStack(Blocks.GRAVEL);
 			ItemStack sand = new ItemStack(Blocks.SAND);
@@ -119,6 +124,7 @@ public class CentrifugeManager {
 		}
 		addRecipe(energy * 4, ItemHelper.getOre("dustBrass", 4), asList(ItemHelper.cloneStack(ItemMaterial.dustCopper, 3), ItemHelper.getOre("dustZinc")), null);
 		addRecipe(energy * 4, ItemHelper.getOre("dustCupronickel", 4), asList(ItemHelper.cloneStack(ItemMaterial.dustCopper, 3), ItemMaterial.dustNickel), null);
+		 */
 
 		/* MOBS */
 		loadMobs();
@@ -146,7 +152,7 @@ public class CentrifugeManager {
 		addDefaultMobRecipe("minecraft:zombie_horse", singletonList(new ItemStack(Items.ROTTEN_FLESH, 2)), singletonList(50), 2);
 
 		/* MOBS */
-		addDefaultMobRecipe("minecraft:blaze", asList(new ItemStack(Items.BLAZE_ROD), ItemHelper.cloneStack(ItemMaterial.dustSulfur)), asList(50, 25), 10);
+		addDefaultMobRecipe("minecraft:blaze", asList(new ItemStack(Items.BLAZE_ROD), Materials.SULFUR.getItem(ItemMaterialType.DUST, true)), asList(50, 25), 10);
 		addDefaultMobRecipe("minecraft:cave_spider", asList(new ItemStack(Items.STRING, 2), new ItemStack(Items.SPIDER_EYE)), asList(50, 25), 5);
 		addDefaultMobRecipe("minecraft:creeper", singletonList(new ItemStack(Items.GUNPOWDER, 2)), singletonList(50), 5);
 		addDefaultMobRecipe("minecraft:elder_guardian", asList(new ItemStack(Items.PRISMARINE_SHARD, 2), new ItemStack(Items.PRISMARINE_CRYSTALS)), asList(50, 50), 10);
@@ -156,7 +162,7 @@ public class CentrifugeManager {
 		addDefaultMobRecipe("minecraft:ghast", asList(new ItemStack(Items.GHAST_TEAR), new ItemStack(Items.GUNPOWDER)), asList(50, 50), 5);
 		addDefaultMobRecipe("minecraft:guardian", asList(new ItemStack(Items.PRISMARINE_SHARD, 2), new ItemStack(Items.PRISMARINE_CRYSTALS)), asList(50, 50), 10);
 		addDefaultMobRecipe("minecraft:husk", asList(new ItemStack(Items.ROTTEN_FLESH, 2), new ItemStack(Items.IRON_INGOT), new ItemStack(Items.POTATO)), asList(50, 2, 2), 5);
-		addDefaultMobRecipe("minecraft:magma_cube", asList(new ItemStack(Items.MAGMA_CREAM), ItemHelper.cloneStack(ItemMaterial.dustSulfur)), asList(50, 25), 2);
+		addDefaultMobRecipe("minecraft:magma_cube", asList(new ItemStack(Items.MAGMA_CREAM), Materials.SULFUR.getItem(ItemMaterialType.DUST, true)), asList(50, 25), 2);
 		addDefaultMobRecipe("minecraft:shulker", singletonList(new ItemStack(Items.SHULKER_SHELL)), singletonList(50), 5);
 		addDefaultMobRecipe("minecraft:silverfish", emptyList(), emptyList(), 5);
 		addDefaultMobRecipe("minecraft:skeleton", asList(new ItemStack(Items.ARROW, 2), new ItemStack(Items.BONE, 2)), asList(50, 50), 5);
@@ -173,9 +179,9 @@ public class CentrifugeManager {
 		addDefaultMobRecipe("minecraft:zombie_villager", asList(new ItemStack(Items.ROTTEN_FLESH, 2), new ItemStack(Items.IRON_INGOT), new ItemStack(Items.POTATO)), asList(50, 2, 2), 5);
 
 		/* THERMAL FOUNDATION */
-		addDefaultMobRecipe("thermalfoundation:blizz", asList(ItemHelper.cloneStack(ItemMaterial.rodBlizz), new ItemStack(Items.SNOWBALL, 4)), asList(50, 25), 10);
-		addDefaultMobRecipe("thermalfoundation:blitz", asList(ItemHelper.cloneStack(ItemMaterial.rodBlitz), ItemHelper.cloneStack(ItemMaterial.dustNiter, 2)), asList(50, 25), 10);
-		addDefaultMobRecipe("thermalfoundation:basalz", asList(ItemHelper.cloneStack(ItemMaterial.rodBasalz), ItemHelper.cloneStack(ItemMaterial.dustObsidian, 2)), asList(50, 25), 10);
+		addDefaultMobRecipe("thermalfoundation:blizz", asList(Materials.BLIZZ.getItem(ItemMaterialType.ROD, true), new ItemStack(Items.SNOWBALL, 4)), asList(50, 25), 10);
+		addDefaultMobRecipe("thermalfoundation:blitz", asList(Materials.BLITZ.getItem(ItemMaterialType.ROD, true), Materials.NITER.getStack(ItemMaterialType.DUST, 2)), asList(50, 25), 10);
+		addDefaultMobRecipe("thermalfoundation:basalz", asList(Materials.BASALZ.getItem(ItemMaterialType.ROD, true), Materials.OBSIDIAN.getStack(ItemMaterialType.DUST, 2)), asList(50, 25), 10);
 	}
 
 	public static void refresh() {
@@ -264,8 +270,10 @@ public class CentrifugeManager {
 		chanceStandard.add(ItemMorb.REUSE_CHANCE);
 		chanceReusable.add(100);
 
-		addRecipeMob(DEFAULT_ENERGY * 2, ItemMorb.setTag(ItemHelper.cloneStack(ItemMorb.morbStandard), entityId, false), outputStandard, chanceStandard, new FluidStack(TFFluids.fluidExperience, xp * CoreProps.MB_PER_XP));
-		addRecipeMob(DEFAULT_ENERGY * 2, ItemMorb.setTag(ItemHelper.cloneStack(ItemMorb.morbReusable), entityId, false), outputReusable, chanceReusable, new FluidStack(TFFluids.fluidExperience, xp * CoreProps.MB_PER_XP));
+		FluidStack experience = Materials.EXPERIENCE.getStack(FluidType.LIQUID, xp * CoreProps.MB_PER_XP);
+
+		addRecipeMob(DEFAULT_ENERGY * 2, ItemMorb.setTag(ItemHelper.cloneStack(ItemMorb.morbStandard), entityId, false), outputStandard, chanceStandard, experience);
+		addRecipeMob(DEFAULT_ENERGY * 2, ItemMorb.setTag(ItemHelper.cloneStack(ItemMorb.morbReusable), entityId, false), outputReusable, chanceReusable, experience.copy());
 	}
 
 	/* RECIPE CLASS */
