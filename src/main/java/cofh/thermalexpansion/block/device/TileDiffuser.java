@@ -14,7 +14,6 @@ import cofh.thermalexpansion.gui.client.device.GuiDiffuser;
 import cofh.thermalexpansion.gui.container.device.ContainerDiffuser;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.util.managers.device.DiffuserManager;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -36,6 +35,7 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -201,7 +201,7 @@ public class TileDiffuser extends TileDeviceBase implements ITickable {
 		if (renderFluid == null) {
 			return;
 		}
-		int radius = TFFluids.isSplashPotion(renderFluid) ? radiusSplash : TFFluids.isLingeringPotion(renderFluid) ? radiusLingering : radiusPotion;
+		int radius = Materials.Potions.isSplashPotion(renderFluid) ? radiusSplash : Materials.Potions.isLingeringPotion(renderFluid) ? radiusLingering : radiusPotion;
 
 		List<PotionEffect> effects = PotionUtils.getEffectsFromTag(renderFluid.tag);
 		int color = PotionUtils.getPotionColorFromEffectList(effects);
@@ -248,7 +248,7 @@ public class TileDiffuser extends TileDeviceBase implements ITickable {
 			renderFluid = new FluidStack(potionFluid, 0);
 			sendFluidPacket();
 		}
-		int radius = TFFluids.isSplashPotion(potionFluid) ? radiusSplash : TFFluids.isLingeringPotion(potionFluid) ? radiusLingering : radiusPotion;
+		int radius = Materials.Potions.isSplashPotion(potionFluid) ? radiusSplash : Materials.Potions.isLingeringPotion(potionFluid) ? radiusLingering : radiusPotion;
 
 		AxisAlignedBB area = new AxisAlignedBB(pos.add(-radius, 1 - radius, -radius), pos.add(1 + radius, radius, 1 + radius));
 		List<EntityLivingBase> entities = world.getEntitiesWithinAABB(EntityLivingBase.class, area);
@@ -427,7 +427,7 @@ public class TileDiffuser extends TileDeviceBase implements ITickable {
 	/* HELPERS */
 	protected static boolean isValidPotion(FluidStack stack) {
 
-		return stack != null && (TFFluids.isPotion(stack) || TFFluids.isSplashPotion(stack) || TFFluids.isLingeringPotion(stack));
+		return stack != null && (Materials.Potions.isPotion(stack) || Materials.Potions.isSplashPotion(stack) || Materials.Potions.isLingeringPotion(stack));
 	}
 
 	/* IInventory */

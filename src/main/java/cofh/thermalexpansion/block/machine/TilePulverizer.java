@@ -17,7 +17,6 @@ import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.init.TESounds;
 import cofh.thermalexpansion.util.managers.machine.PulverizerManager;
 import cofh.thermalexpansion.util.managers.machine.PulverizerManager.PulverizerRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -31,6 +30,8 @@ import net.minecraftforge.fluids.capability.FluidTankProperties;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -116,7 +117,7 @@ public class TilePulverizer extends TileMachineBase {
 		inventory = new ItemStack[1 + 1 + 1 + 1];
 		Arrays.fill(inventory, ItemStack.EMPTY);
 		createAllSlots(inventory.length);
-		tank.setLock(TFFluids.fluidPetrotheum);
+		tank.setLock(Materials.PETROTHEUM.getFluid(FluidType.MOLTEN));
 	}
 
 	@Override
@@ -414,7 +415,7 @@ public class TilePulverizer extends TileMachineBase {
 			augmentPetrotheum = true;
 			hasModeAugment = true;
 			energyMod += PETROTHEUM_ENERGY_MOD;
-			tank.setLock(TFFluids.fluidPetrotheum);
+			tank.setLock(Materials.PETROTHEUM.getFluid(FluidType.MOLTEN));
 			return true;
 		}
 		return super.installAugmentToSlot(slot);

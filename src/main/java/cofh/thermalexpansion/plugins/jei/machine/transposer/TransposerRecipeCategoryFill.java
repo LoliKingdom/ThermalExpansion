@@ -8,7 +8,6 @@ import cofh.thermalexpansion.item.ItemFlorb;
 import cofh.thermalexpansion.plugins.jei.RecipeUidsTE;
 import cofh.thermalexpansion.util.managers.machine.TransposerManager;
 import cofh.thermalexpansion.util.managers.machine.TransposerManager.TransposerRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.IJeiHelpers;
 import mezz.jei.api.IModRegistry;
@@ -24,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -56,15 +56,15 @@ public class TransposerRecipeCategoryFill extends TransposerRecipeCategory {
 		List<TransposerRecipe> florbRecipes = new ArrayList<>();
 
 		for (TransposerRecipe recipe : TransposerManager.getFillRecipeList()) {
-			if (TFFluids.isPotion(recipe.getFluid())) {
+			if (Materials.Potions.isPotion(recipe.getFluid())) {
 				potionRecipes.add(recipe);
 				continue;
 			}
-			if (TFFluids.isSplashPotion(recipe.getFluid())) {
+			if (Materials.Potions.isSplashPotion(recipe.getFluid())) {
 				splashPotionRecipes.add(recipe);
 				continue;
 			}
-			if (TFFluids.isLingeringPotion(recipe.getFluid())) {
+			if (Materials.Potions.isLingeringPotion(recipe.getFluid())) {
 				if (recipe.getInput().getItem().equals(Items.ARROW)) {
 					arrowRecipes.add(recipe);
 				} else {

@@ -25,6 +25,9 @@ public class TEItems {
 		itemReservoir = new ItemReservoir();
 		itemSatchel = new ItemSatchel();
 
+		itemSecurity = new ItemSecurity();
+		itemUpgrade = new ItemUpgrade();
+
 		itemFrame = new ItemFrame();
 		itemAugment = new ItemAugment();
 
@@ -42,6 +45,9 @@ public class TEItems {
 
 		initList.add(itemFlorb);
 		initList.add(itemMorb);
+
+		initList.add(itemSecurity);
+		initList.add(itemUpgrade);
 
 		initList.add(itemTomeExperience);
 
@@ -93,6 +99,9 @@ public class TEItems {
 
 	public static ItemFlorb itemFlorb;
 	public static ItemMorb itemMorb;
+
+	public static ItemSecurity itemSecurity;
+	public static ItemUpgrade itemUpgrade;
 
 	public static ItemTomeExperience itemTomeExperience;
 

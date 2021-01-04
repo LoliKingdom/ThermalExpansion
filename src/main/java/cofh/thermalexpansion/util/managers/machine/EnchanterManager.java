@@ -3,7 +3,6 @@ package cofh.thermalexpansion.util.managers.machine;
 import cofh.core.inventory.ComparableItemStack;
 import cofh.core.inventory.ComparableItemStackValidatedNBT;
 import cofh.core.inventory.OreValidator;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.enchantment.Enchantment;
@@ -13,6 +12,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemEnchantedBook;
 import net.minecraft.item.ItemStack;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.List;
 import java.util.Map;
@@ -244,8 +245,8 @@ public class EnchanterManager {
 			addDefaultEnchantmentRecipe(new ItemStack(Items.EXPERIENCE_BOTTLE), "cofhcore:insight", 1);
 			addDefaultEnchantmentRecipe(new ItemStack(Items.NETHER_WART), "cofhcore:leech", 1);
 			addDefaultEnchantmentRecipe(new ItemStack(Items.ARROW), "cofhcore:multishot", 2);
-			addDefaultEnchantmentRecipe(ItemMaterial.dustPetrotheum, "cofhcore:smashing", 2);
-			addDefaultEnchantmentRecipe(ItemMaterial.dustPyrotheum, "cofhcore:smelting", 2);
+			addDefaultEnchantmentRecipe(Materials.PETROTHEUM.getStack(ItemMaterialType.DUST, 1), "cofhcore:smashing", 2);
+			addDefaultEnchantmentRecipe(Materials.PETROTHEUM.getStack(ItemMaterialType.DUST, 1), "cofhcore:smelting", 2);
 			addDefaultEnchantmentRecipe(new ItemStack(Blocks.SOUL_SAND), "cofhcore:soulbound", 1);
 			addDefaultEnchantmentRecipe(new ItemStack(Items.SKULL, 1, 1), "cofhcore:vorpal", 3);
 		}

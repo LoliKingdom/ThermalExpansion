@@ -9,9 +9,6 @@ import cofh.core.util.helpers.FluidHelper;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalexpansion.block.storage.BlockCell;
 import cofh.thermalexpansion.item.ItemFrame;
-import cofh.thermalfoundation.init.TFFluids;
-import cofh.thermalfoundation.item.ItemFertilizer;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.init.Blocks;
@@ -25,6 +22,10 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.api.material.Material;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.List;
 import java.util.Map;
@@ -136,52 +137,54 @@ public class TransposerManager {
 		{
 			int energy = 2000;
 
-			FluidStack cryoFluid = new FluidStack(TFFluids.fluidCryotheum, 200);
+			FluidStack cryoFluid = Materials.CRYOTHEUM.getStack(FluidType.MOLTEN, 200);
 
-			addFillRecipe(energy, ItemMaterial.crystalRedstone, new ItemStack(Items.REDSTONE, 2), cryoFluid, false);
-			addFillRecipe(energy, ItemMaterial.crystalGlowstone, new ItemStack(Items.GLOWSTONE_DUST), cryoFluid, false);
-			addFillRecipe(energy, ItemMaterial.crystalEnder, new ItemStack(Items.ENDER_PEARL), cryoFluid, false);
+			addFillRecipe(energy, Materials.REDSTONE.getItem(ItemMaterialType.CRYSTAL, false), new ItemStack(Items.REDSTONE, 2), cryoFluid, false);
+			addFillRecipe(energy, Materials.GLOWSTONE.getItem(ItemMaterialType.CRYSTAL, false), new ItemStack(Items.GLOWSTONE_DUST), cryoFluid, false);
+			addFillRecipe(energy, Materials.ENDER_PEARL.getItem(ItemMaterialType.CRYSTAL, false), new ItemStack(Items.ENDER_PEARL), cryoFluid, false);
 
 			energy = 400;
 
 			addFillRecipe(energy, new ItemStack(Blocks.ICE), new ItemStack(Blocks.PACKED_ICE), cryoFluid, false);
 
-			addFillRecipe(energy, ItemMaterial.dustCryotheum, new ItemStack(Blocks.ICE), new FluidStack(FluidRegistry.WATER, Fluid.BUCKET_VOLUME), false);
-			addFillRecipe(energy, ItemMaterial.dustCryotheum, new ItemStack(Items.REDSTONE, 10), new FluidStack(TFFluids.fluidRedstone, Fluid.BUCKET_VOLUME), false);
-			addFillRecipe(energy, ItemMaterial.dustCryotheum, new ItemStack(Items.GLOWSTONE_DUST, 4), new FluidStack(TFFluids.fluidGlowstone, Fluid.BUCKET_VOLUME), false);
-			addFillRecipe(energy, ItemMaterial.dustCryotheum, new ItemStack(Items.ENDER_PEARL, 4), new FluidStack(TFFluids.fluidEnder, Fluid.BUCKET_VOLUME), false);
+			ItemStack cryoDust = Materials.CRYOTHEUM.getItem(ItemMaterialType.DUST, false);
+
+			addFillRecipe(energy, cryoDust, new ItemStack(Blocks.ICE), new FluidStack(FluidRegistry.WATER, Fluid.BUCKET_VOLUME), false);
+			addFillRecipe(energy, cryoDust, new ItemStack(Items.REDSTONE, 10), Materials.REDSTONE.getStack(FluidType.MOLTEN, Fluid.BUCKET_VOLUME), false);
+			addFillRecipe(energy, cryoDust, new ItemStack(Items.GLOWSTONE_DUST, 4), Materials.GLOWSTONE.getStack(FluidType.MOLTEN, Fluid.BUCKET_VOLUME), false);
+			addFillRecipe(energy, cryoDust, new ItemStack(Items.ENDER_PEARL, 4), Materials.ENDER_PEARL.getStack(FluidType.MOLTEN, Fluid.BUCKET_VOLUME), false);
 		}
 
 		/* ELEMENTAL */
 		{
-			FluidStack expFluid = new FluidStack(TFFluids.fluidExperience, 200);
+			FluidStack expFluid = Materials.CRYOTHEUM.getStack(FluidType.LIQUID, 200);
 
-			addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustSulfur, 2), new ItemStack(Items.BLAZE_POWDER), expFluid, false);
-			addFillRecipe(16000, ItemHelper.cloneStack(Items.SNOWBALL, 2), ItemMaterial.dustBlizz, expFluid, false);
-			addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustNiter, 2), ItemMaterial.dustBlitz, expFluid, false);
-			addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustObsidian, 2), ItemMaterial.dustBasalz, expFluid, false);
+			addFillRecipe(16000, Materials.SULFUR.getStack(ItemMaterialType.DUST, 2), new ItemStack(Items.BLAZE_POWDER), expFluid, false);
+			addFillRecipe(16000, ItemHelper.cloneStack(Items.SNOWBALL, 2), Materials.BLIZZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
+			addFillRecipe(16000, Materials.NITER.getStack(ItemMaterialType.DUST, 2), Materials.BLITZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
+			addFillRecipe(16000, Materials.OBSIDIAN.getStack(ItemMaterialType.DUST, 2), Materials.BASALZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
 
 			if (FluidRegistry.isFluidRegistered(CoreProps.ESSENCE)) {
 				expFluid = FluidRegistry.getFluidStack(CoreProps.ESSENCE, 200);
 
-				addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustSulfur, 2), new ItemStack(Items.BLAZE_POWDER), expFluid, false);
-				addFillRecipe(16000, ItemHelper.cloneStack(Items.SNOWBALL, 2), ItemMaterial.dustBlizz, expFluid, false);
-				addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustNiter, 2), ItemMaterial.dustBlitz, expFluid, false);
-				addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustObsidian, 2), ItemMaterial.dustBasalz, expFluid, false);
+				addFillRecipe(16000, Materials.SULFUR.getStack(ItemMaterialType.DUST, 2), new ItemStack(Items.BLAZE_POWDER), expFluid, false);
+				addFillRecipe(16000, ItemHelper.cloneStack(Items.SNOWBALL, 2), Materials.BLIZZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
+				addFillRecipe(16000, Materials.NITER.getStack(ItemMaterialType.DUST, 2), Materials.BLITZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
+				addFillRecipe(16000, Materials.OBSIDIAN.getStack(ItemMaterialType.DUST, 2), Materials.BASALZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
 			}
 			if (FluidRegistry.isFluidRegistered(CoreProps.XPJUICE)) {
 				expFluid = FluidRegistry.getFluidStack(CoreProps.XPJUICE, 200);
 
-				addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustSulfur, 2), new ItemStack(Items.BLAZE_POWDER), expFluid, false);
-				addFillRecipe(16000, ItemHelper.cloneStack(Items.SNOWBALL, 2), ItemMaterial.dustBlizz, expFluid, false);
-				addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustNiter, 2), ItemMaterial.dustBlitz, expFluid, false);
-				addFillRecipe(16000, ItemHelper.cloneStack(ItemMaterial.dustObsidian, 2), ItemMaterial.dustBasalz, expFluid, false);
+				addFillRecipe(16000, Materials.SULFUR.getStack(ItemMaterialType.DUST, 2), new ItemStack(Items.BLAZE_POWDER), expFluid, false);
+				addFillRecipe(16000, ItemHelper.cloneStack(Items.SNOWBALL, 2), Materials.BLIZZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
+				addFillRecipe(16000, Materials.NITER.getStack(ItemMaterialType.DUST, 2), Materials.BLITZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
+				addFillRecipe(16000, Materials.OBSIDIAN.getStack(ItemMaterialType.DUST, 2), Materials.BASALZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
 			}
 		}
 
 		/* CELLS */
 		{
-			FluidStack redstoneFluid = new FluidStack(TFFluids.fluidRedstone, Fluid.BUCKET_VOLUME * 4);
+			FluidStack redstoneFluid = Materials.REDSTONE.getStack(FluidType.MOLTEN, Fluid.BUCKET_VOLUME * 4);
 
 			if (BlockCell.enableClassicRecipes) {
 				addFillRecipe(16000, ItemFrame.frameCell2, ItemFrame.frameCell2Filled, redstoneFluid, false);
@@ -190,12 +193,13 @@ public class TransposerManager {
 			}
 		}
 		addFillRecipe(400, new ItemStack(Blocks.SPONGE, 1, 0), new ItemStack(Blocks.SPONGE, 1, 1), new FluidStack(FluidRegistry.WATER, Fluid.BUCKET_VOLUME), true);
-		addFillRecipe(400, new ItemStack(Items.BOWL), new ItemStack(Items.MUSHROOM_STEW), new FluidStack(TFFluids.fluidMushroomStew, 250), true);
-		addFillRecipe(400, new ItemStack(Items.GLASS_BOTTLE), new ItemStack(Items.EXPERIENCE_BOTTLE), new FluidStack(TFFluids.fluidExperience, 250), false);
+		addFillRecipe(400, new ItemStack(Items.BOWL), new ItemStack(Items.MUSHROOM_STEW), Materials.MUSHROOM_STEW.getStack(FluidType.LIQUID, 250), true);
+		addFillRecipe(400, new ItemStack(Items.GLASS_BOTTLE), new ItemStack(Items.EXPERIENCE_BOTTLE), Materials.EXPERIENCE.getStack(FluidType.LIQUID, 250), false);
 
-		addFillRecipe(1600, ItemFertilizer.fertilizerBasic, ItemFertilizer.fertilizerRich, new FluidStack(TFFluids.fluidSap, 200), false);
-		addFillRecipe(800, ItemMaterial.dustBiomass, ItemMaterial.dustBiomassRich, new FluidStack(TFFluids.fluidSeedOil, 100), false);
-		addFillRecipe(800, ItemMaterial.dustBioblend, ItemMaterial.dustBioblendRich, new FluidStack(TFFluids.fluidSeedOil, 100), false);
+		addFillRecipe(1600, Material.BASIC.getItem(ItemMaterialType.FERTILIZER, false), Materials.RICH.getItem(ItemMaterialType.FERTILIZER, false), Materials.SAP.getStack(FluidType.LIQUID, 200), false);
+		// TODO
+		// addFillRecipe(800, ItemMaterial.dustBiomass, ItemMaterial.dustBiomassRich, Materials.SEED_OIL.getStack(FluidType.LIQUID, 100), false);
+		// addFillRecipe(800, ItemMaterial.dustBioblend, ItemMaterial.dustBioblendRich, Materials.SEED_OIL.getStack(FluidType.LIQUID, 100), false);
 
 		/* LOAD POTIONS */
 		loadPotions();
@@ -216,9 +220,9 @@ public class TransposerManager {
 
 	public static void loadRecipes() {
 
-		FluidStack cryoStack = new FluidStack(TFFluids.fluidCryotheum, 200);
+		FluidStack cryoStack = Materials.CRYOTHEUM.getStack(FluidType.MOLTEN, 200);
 
-		addFillRecipe(2000, ItemHelper.getOre("oreCinnabar"), ItemHelper.cloneStack(ItemMaterial.crystalCinnabar, 4), cryoStack, false);
+		addFillRecipe(2000, ItemHelper.getOre("oreCinnabar"), Materials.CINNABAR.getStack(ItemMaterialType.CRYSTAL, 4), cryoStack, false);
 
 		if (FluidRegistry.isFluidRegistered(CoreProps.ESSENCE)) {
 			addFillRecipe(400, new ItemStack(Items.GLASS_BOTTLE), new ItemStack(Items.EXPERIENCE_BOTTLE), new FluidStack(FluidRegistry.getFluid(CoreProps.ESSENCE), 250), false);
@@ -341,10 +345,10 @@ public class TransposerManager {
 
 	public static void addDefaultPotionRecipes(PotionType type) {
 
-		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM, 1), type), TFFluids.getPotion(CoreProps.BOTTLE_VOLUME, type), true);
-		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION, 1), type), TFFluids.getSplashPotion(CoreProps.BOTTLE_VOLUME, type), true);
-		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.LINGERING_POTION, 1), type), TFFluids.getLingeringPotion(CoreProps.BOTTLE_VOLUME, type), true);
-		addFillRecipe(DEFAULT_ENERGY, new ItemStack(Items.ARROW), PotionUtils.addPotionToItemStack(new ItemStack(Items.TIPPED_ARROW), type), TFFluids.getLingeringPotion(CoreProps.BOTTLE_VOLUME / 10, type), false);
+		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM, 1), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, type).getStack(FluidType.LIQUID, CoreProps.BOTTLE_VOLUME), true);
+		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION, 1), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, type).getStack(FluidType.LIQUID, CoreProps.BOTTLE_VOLUME), true);
+		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.LINGERING_POTION, 1), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, type).getStack(FluidType.LIQUID, CoreProps.BOTTLE_VOLUME), true);
+		addFillRecipe(DEFAULT_ENERGY, new ItemStack(Items.ARROW), PotionUtils.addPotionToItemStack(new ItemStack(Items.TIPPED_ARROW), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, type).getStack(FluidType.LIQUID,CoreProps.BOTTLE_VOLUME / 10), false);
 	}
 
 	public static void addDefaultSeedOilRecipes() {
@@ -356,7 +360,7 @@ public class TransposerManager {
 				if (seed.isEmpty()) {
 					continue;
 				}
-				TransposerManager.addExtractRecipe(1600, ItemHelper.cloneStack(seed.get(0), 1), ItemStack.EMPTY, new FluidStack(TFFluids.fluidSeedOil, 50), 0, false);
+				TransposerManager.addExtractRecipe(1600, ItemHelper.cloneStack(seed.get(0), 1), ItemStack.EMPTY, Materials.SEED_OIL.getStack(FluidType.LIQUID, 50), 0, false);
 			}
 		}
 	}

@@ -6,7 +6,6 @@ import cofh.core.inventory.ComparableItemStack;
 import cofh.core.inventory.ComparableItemStackValidatedNBT;
 import cofh.core.inventory.OreValidator;
 import cofh.core.util.helpers.FluidHelper;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.init.Items;
@@ -14,6 +13,9 @@ import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionType;
 import net.minecraftforge.fluids.FluidStack;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.List;
 import java.util.Map;
@@ -138,10 +140,10 @@ public class BrewerManager {
 
 		/* COFH */
 		{
-			addDefaultPotionRecipes(PotionTypes.AWKWARD, ItemMaterial.dustBasalz, CorePotions.haste);
-			addDefaultPotionRecipes(PotionTypes.AWKWARD, ItemMaterial.dustObsidian, CorePotions.resistance);
-			addDefaultPotionRecipes(PotionTypes.AWKWARD, ItemMaterial.dustBlitz, CorePotions.levitation);
-			addDefaultPotionRecipes(PotionTypes.AWKWARD, ItemMaterial.dustBlizz, CorePotions.absorption);
+			addDefaultPotionRecipes(PotionTypes.AWKWARD, Materials.BASALZ.getStack(ItemMaterialType.DUST, 1), CorePotions.haste);
+			addDefaultPotionRecipes(PotionTypes.AWKWARD, Materials.OBSIDIAN.getStack(ItemMaterialType.DUST, 1), CorePotions.resistance);
+			addDefaultPotionRecipes(PotionTypes.AWKWARD, Materials.BLITZ.getStack(ItemMaterialType.DUST, 1), CorePotions.levitation);
+			addDefaultPotionRecipes(PotionTypes.AWKWARD, Materials.BLIZZ.getStack(ItemMaterialType.DUST, 1), CorePotions.absorption);
 			addDefaultPotionRecipes(PotionTypes.AWKWARD, emerald, CorePotions.luck);
 			addDefaultPotionRecipes(CorePotions.luck, fermentedSpiderEye, CorePotions.unluck);
 			addDefaultPotionRecipes(PotionTypes.REGENERATION, fermentedSpiderEye, CorePotions.wither);
@@ -243,19 +245,27 @@ public class BrewerManager {
 	}
 
 	public static void addDefaultPotionRecipes(PotionType input, ItemStack reagent, PotionType output) {
-
-		addRecipe(DEFAULT_ENERGY, reagent, TFFluids.getPotion(DEFAULT_AMOUNT, input), TFFluids.getPotion(DEFAULT_AMOUNT, output));
-		addRecipe(DEFAULT_ENERGY, reagent, TFFluids.getSplashPotion(DEFAULT_AMOUNT, input), TFFluids.getSplashPotion(DEFAULT_AMOUNT, output));
-		addRecipe(DEFAULT_ENERGY, reagent, TFFluids.getLingeringPotion(DEFAULT_AMOUNT, input), TFFluids.getLingeringPotion(DEFAULT_AMOUNT, output));
+		addRecipe(DEFAULT_ENERGY, reagent,
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, input).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, output).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+		addRecipe(DEFAULT_ENERGY, reagent,
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, input).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, output).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+		addRecipe(DEFAULT_ENERGY, reagent,
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, input).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, output).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
 
 		addSwapPotionRecipes(input);
 		addSwapPotionRecipes(output);
 	}
 
 	public static void addSwapPotionRecipes(PotionType potion) {
-
-		addRecipe(DEFAULT_ENERGY, new ItemStack(Items.GUNPOWDER), TFFluids.getPotion(DEFAULT_AMOUNT, potion), TFFluids.getSplashPotion(DEFAULT_AMOUNT, potion));
-		addRecipe(DEFAULT_ENERGY, new ItemStack(Items.DRAGON_BREATH), TFFluids.getSplashPotion(DEFAULT_AMOUNT, potion), TFFluids.getLingeringPotion(DEFAULT_AMOUNT, potion));
+		addRecipe(DEFAULT_ENERGY, new ItemStack(Items.GUNPOWDER),
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+		addRecipe(DEFAULT_ENERGY, new ItemStack(Items.DRAGON_BREATH),
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
+				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
 	}
 
 	public static void addSwapPotionRecipes(String baseName, int maxRank) {

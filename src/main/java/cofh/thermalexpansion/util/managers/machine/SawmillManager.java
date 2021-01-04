@@ -6,13 +6,14 @@ import cofh.core.inventory.InventoryCraftingFalse;
 import cofh.core.inventory.OreValidator;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalexpansion.ThermalExpansion;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.oredict.OreDictionary;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -105,7 +106,7 @@ public class SawmillManager {
 						if (!resultEntry.isEmpty()) {
 							ItemStack result = resultEntry.copy();
 							result.setCount((int) (result.getCount() * SawmillManager.logMultiplier));
-							addRecipe(DEFAULT_ENERGY / 2, log, result, ItemMaterial.dustWood);
+							addRecipe(DEFAULT_ENERGY / 2, log, result, Materials.WOOD.getItem(ItemMaterialType.DUST, false));
 						}
 					}
 				} else {
@@ -116,7 +117,7 @@ public class SawmillManager {
 					if (!resultEntry.isEmpty()) {
 						ItemStack result = resultEntry.copy();
 						result.setCount((int) (result.getCount() * SawmillManager.logMultiplier));
-						addRecipe(DEFAULT_ENERGY / 2, log, result, ItemMaterial.dustWood);
+						addRecipe(DEFAULT_ENERGY / 2, log, result, Materials.WOOD.getItem(ItemMaterialType.DUST, false));
 					}
 				}
 			}
@@ -182,7 +183,7 @@ public class SawmillManager {
 
 	public static void addBoatRecipe(ItemStack boat, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, boat, ItemHelper.cloneStack(planks, 4), ItemMaterial.dustWood, 125);
+		addRecipe(DEFAULT_ENERGY, boat, ItemHelper.cloneStack(planks, 4), Materials.WOOD.getItem(ItemMaterialType.DUST, false), 125);
 	}
 
 	public static void addBookshelfRecipe(ItemStack bookshelf, ItemStack planks) {
@@ -193,52 +194,52 @@ public class SawmillManager {
 	// Also used for Bowls
 	public static void addButtonRecipe(ItemStack button, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY / 2, ItemHelper.cloneStack(button, 2), planks, ItemMaterial.dustWood, 25);
+		addRecipe(DEFAULT_ENERGY / 2, ItemHelper.cloneStack(button, 2), planks, Materials.WOOD.getItem(ItemMaterialType.DUST, false), 25);
 	}
 
 	public static void addChestRecipe(ItemStack chest, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, chest, ItemHelper.cloneStack(planks, 4), ItemHelper.cloneStack(ItemMaterial.dustWood, 2));
+		addRecipe(DEFAULT_ENERGY, chest, ItemHelper.cloneStack(planks, 4), Materials.WOOD.getStack(ItemMaterialType.DUST, 2));
 	}
 
 	public static void addDoorRecipe(ItemStack door, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, door, planks, ItemMaterial.dustWood, 50);
+		addRecipe(DEFAULT_ENERGY, door, planks, Materials.WOOD.getItem(ItemMaterialType.DUST, false), 50);
 	}
 
 	public static void addFenceRecipe(ItemStack fence, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, ItemHelper.cloneStack(fence, 2), planks, ItemMaterial.dustWood, 25);
+		addRecipe(DEFAULT_ENERGY, ItemHelper.cloneStack(fence, 2), planks, Materials.WOOD.getItem(ItemMaterialType.DUST, false), 25);
 	}
 
 	public static void addFenceGateRecipe(ItemStack fenceGate, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, fenceGate, planks, ItemMaterial.dustWood, 125);
+		addRecipe(DEFAULT_ENERGY, fenceGate, planks, Materials.WOOD.getItem(ItemMaterialType.DUST, false), 125);
 	}
 
 	public static void addLogRecipe(ItemStack log, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, log, ItemHelper.cloneStack(planks, (int) (4 * SawmillManager.logMultiplier)), ItemHelper.cloneStack(ItemMaterial.dustWood));
+		addRecipe(DEFAULT_ENERGY, log, ItemHelper.cloneStack(planks, (int) (4 * SawmillManager.logMultiplier)), Materials.WOOD.getStack(ItemMaterialType.DUST, 2));
 	}
 
 	public static void addPressurePlateRecipe(ItemStack pressurePlate, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, pressurePlate, planks, ItemMaterial.dustWood, 50);
+		addRecipe(DEFAULT_ENERGY, pressurePlate, planks, Materials.WOOD.getItem(ItemMaterialType.DUST, false), 50);
 	}
 
 	public static void addStairsRecipe(ItemStack stairs, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, ItemHelper.cloneStack(stairs, 2), planks, ItemMaterial.dustWood, 50);
+		addRecipe(DEFAULT_ENERGY, ItemHelper.cloneStack(stairs, 2), planks, Materials.WOOD.getItem(ItemMaterialType.DUST, false), 50);
 	}
 
 	public static void addTrapdoorRecipe(ItemStack trapdoor, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, ItemHelper.cloneStack(trapdoor, 2), planks, ItemMaterial.dustWood, 75);
+		addRecipe(DEFAULT_ENERGY, ItemHelper.cloneStack(trapdoor, 2), planks, Materials.WOOD.getItem(ItemMaterialType.DUST, false), 75);
 	}
 
 	public static void addWorkbenchRecipe(ItemStack workbench, ItemStack planks) {
 
-		addRecipe(DEFAULT_ENERGY, workbench, ItemHelper.cloneStack(planks, 3), ItemMaterial.dustWood);
+		addRecipe(DEFAULT_ENERGY, workbench, ItemHelper.cloneStack(planks, 3), Materials.WOOD.getItem(ItemMaterialType.DUST, false));
 	}
 
 	/* RECIPE CLASS */

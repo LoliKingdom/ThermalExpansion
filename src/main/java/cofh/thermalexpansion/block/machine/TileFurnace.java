@@ -17,7 +17,6 @@ import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.init.TESounds;
 import cofh.thermalexpansion.util.managers.machine.FurnaceManager;
 import cofh.thermalexpansion.util.managers.machine.FurnaceManager.FurnaceRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -31,6 +30,8 @@ import net.minecraftforge.fluids.capability.FluidTankProperties;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -108,7 +109,7 @@ public class TileFurnace extends TileMachineBase {
 		inventory = new ItemStack[1 + 1 + 1];
 		Arrays.fill(inventory, ItemStack.EMPTY);
 		createAllSlots(inventory.length);
-		tank.setLock(TFFluids.fluidCreosote);
+		tank.setLock(Materials.CREOSOTE.getFluid(FluidType.LIQUID));
 	}
 
 	@Override
@@ -199,7 +200,7 @@ public class TileFurnace extends TileMachineBase {
 			inventory[1].grow(output.getCount());
 		}
 		if (augmentPyrolysis) {
-			tank.fill(new FluidStack(TFFluids.fluidCreosote, curRecipe.getCreosote()), true);
+			tank.fill(Materials.CREOSOTE.getStack(FluidType.LIQUID,curRecipe.getCreosote()), true);
 		} else {
 			if ((augmentFood && FurnaceManager.isFood(inventory[0]) || augmentOre && FurnaceManager.isOre(inventory[0])) && inventory[1].getCount() < inventory[1].getMaxStackSize()) {
 				inventory[1].grow(Math.max(1, output.getCount() / 2));
@@ -423,7 +424,7 @@ public class TileFurnace extends TileMachineBase {
 			augmentPyrolysis = true;
 			hasModeAugment = true;
 			energyMod += PYRO_ENERGY_MOD;
-			tank.setLock(TFFluids.fluidCreosote);
+			tank.setLock(Materials.CREOSOTE.getFluid(FluidType.LIQUID));
 			return true;
 		}
 		return super.installAugmentToSlot(slot);

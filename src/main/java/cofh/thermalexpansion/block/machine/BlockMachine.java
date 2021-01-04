@@ -19,9 +19,8 @@ import cofh.thermalexpansion.block.BlockTEBase;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.init.TETextures;
 import cofh.thermalexpansion.item.ItemFrame;
+import cofh.thermalexpansion.item.ItemUpgrade;
 import cofh.thermalexpansion.render.BakeryMachine;
-import cofh.thermalfoundation.item.ItemMaterial;
-import cofh.thermalfoundation.item.ItemUpgrade;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
@@ -49,6 +48,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import static cofh.core.util.helpers.RecipeHelper.*;
 
@@ -402,7 +403,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "dustRedstone",
 					'Y', Blocks.BRICK_BLOCK
 			);
@@ -414,7 +415,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', Blocks.PISTON,
 					'Y', Items.FLINT
 			);
@@ -426,8 +427,8 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
-					'X', ItemMaterial.partSawBlade,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
+					'X', Materials.IRON.getStack(ItemMaterialType.BUZZSAW_BLADE, 1),
 					'Y', "plankWood"
 			);
 		}
@@ -438,7 +439,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "gearInvar",
 					'Y', "sand"
 			);
@@ -450,7 +451,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "gearLumium",
 					'Y', "dirt"
 			);
@@ -462,7 +463,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', Blocks.PISTON,
 					'Y', "ingotBronze"
 			);
@@ -474,7 +475,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "blockGlassHardened",
 					'Y', Blocks.NETHER_BRICK
 			);
@@ -486,7 +487,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', constantanPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "gearNickel",
 					'Y', "blockGlass"
 			);
@@ -498,7 +499,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', Items.BUCKET,
 					'Y', "blockGlass"
 			);
@@ -510,9 +511,9 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "gearLead",
-					'Y', ItemMaterial.powerCoilSilver
+					'Y', Materials.SILVER.getStack(ItemMaterialType.COIL, 1)
 			);
 		}
 		if (enable[Type.CENTRIFUGE.getMetadata()]) {
@@ -522,7 +523,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', Items.COMPASS,
 					'Y', "ingotConstantan"
 			);
@@ -534,7 +535,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "workbench",
 					'Y', "ingotTin"
 			);
@@ -546,7 +547,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', constantanPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', Items.BREWING_STAND,
 					'Y', "blockGlassHardened"
 			);
@@ -558,7 +559,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', constantanPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', Blocks.ENCHANTING_TABLE,
 					'Y', "blockLapis"
 			);
@@ -570,7 +571,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', Blocks.PISTON,
 					'Y', "ingotInvar"
 			);
@@ -582,7 +583,7 @@ public class BlockMachine extends BlockTEBase implements IModelRegister, IBakery
 					"IPI",
 					'C', ItemFrame.frameMachine,
 					'I', copperPart,
-					'P', ItemMaterial.powerCoilGold,
+					'P', Materials.GOLD.getStack(ItemMaterialType.COIL, 1),
 					'X', "blockGlass",
 					'Y', "ingotInvar"
 			);

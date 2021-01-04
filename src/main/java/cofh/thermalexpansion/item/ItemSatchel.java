@@ -16,8 +16,6 @@ import cofh.core.util.filter.ItemFilterWrapper;
 import cofh.core.util.helpers.*;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.gui.GuiHandler;
-import cofh.thermalfoundation.init.TFProps;
-import cofh.thermalfoundation.item.ItemSecurity;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -122,13 +120,7 @@ public class ItemSatchel extends ItemMulti implements IInitializer, IColorableIt
 
 		if (enable && isInCreativeTab(tab)) {
 			for (int metadata : itemList) {
-				if (metadata != CREATIVE) {
-					items.add(setDefaultInventoryTag(new ItemStack(this, 1, metadata)));
-				} else {
-					if (TFProps.showCreativeItems) {
-						items.add(setDefaultInventoryTag(new ItemStack(this, 1, metadata)));
-					}
-				}
+				items.add(setDefaultInventoryTag(new ItemStack(this, 1, metadata)));
 			}
 		}
 	}

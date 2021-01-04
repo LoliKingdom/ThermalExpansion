@@ -12,7 +12,6 @@ import cofh.thermalexpansion.gui.client.dynamo.GuiDynamoSteam;
 import cofh.thermalexpansion.gui.container.dynamo.ContainerDynamoSteam;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.util.managers.dynamo.SteamManager;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -29,6 +28,8 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -172,7 +173,7 @@ public class TileDynamoSteam extends TileDynamoBase {
 	@SideOnly (Side.CLIENT)
 	public TextureAtlasSprite getBaseUnderlayTexture() {
 
-		return TextureHelper.getTexture(TFFluids.fluidSteam.getStill());
+		return TextureHelper.getTexture(Materials.STEAM.getFluid(FluidType.GASEOUS).getStill());
 	}
 
 	/* GUI METHODS */
@@ -302,7 +303,7 @@ public class TileDynamoSteam extends TileDynamoBase {
 		super.postAugmentInstall();
 
 		if (augmentTurbine) {
-			tank.setLock(TFFluids.fluidSteam);
+			tank.setLock(Materials.STEAM.getFluid(FluidType.GASEOUS));
 		} else {
 			tank.setLock(FluidRegistry.WATER);
 		}
@@ -389,7 +390,7 @@ public class TileDynamoSteam extends TileDynamoBase {
 
 					if (from == null || augmentCoilDuct || from.ordinal() != facing) {
 						if (augmentTurbine) {
-							if (resource.getFluid() == TFFluids.fluidSteam) {
+							if (resource.getFluid() == Materials.STEAM.getFluid(FluidType.GASEOUS)) {
 								return tank.fill(resource, doFill);
 							}
 							return 0;

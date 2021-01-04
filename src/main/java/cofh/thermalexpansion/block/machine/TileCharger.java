@@ -16,7 +16,6 @@ import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.item.ItemCapacitor;
 import cofh.thermalexpansion.util.managers.machine.ChargerManager;
 import cofh.thermalexpansion.util.managers.machine.ChargerManager.ChargerRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import com.google.common.collect.Iterables;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -34,6 +33,8 @@ import net.minecraftforge.fluids.capability.FluidTankProperties;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -138,7 +139,7 @@ public class TileCharger extends TileMachineBase {
 		inventory = new ItemStack[1 + 1 + 1 + 1];
 		Arrays.fill(inventory, ItemStack.EMPTY);
 		createAllSlots(inventory.length);
-		tank.setLock(TFFluids.fluidExperience);
+		tank.setLock(Materials.EXPERIENCE.getFluid(FluidType.LIQUID));
 	}
 
 	@Override
@@ -814,7 +815,7 @@ public class TileCharger extends TileMachineBase {
 		if (!augmentRepair && TEProps.MACHINE_CHARGER_REPAIR.equals(id)) {
 			augmentRepair = true;
 			hasModeAugment = true;
-			tank.setLock(TFFluids.fluidExperience);
+			tank.setLock(Materials.EXPERIENCE.getFluid(FluidType.LIQUID));
 			return true;
 		}
 		if (!augmentWireless && TEProps.MACHINE_CHARGER_WIRELESS.equals(id)) {

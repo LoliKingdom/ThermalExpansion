@@ -12,7 +12,6 @@ import cofh.thermalexpansion.gui.client.dynamo.GuiDynamoCompression;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.util.managers.device.CoolantManager;
 import cofh.thermalexpansion.util.managers.dynamo.CompressionManager;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -30,6 +29,8 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.HashSet;
@@ -176,7 +177,7 @@ public class TileDynamoCompression extends TileDynamoBase {
 
 		FluidStack fluid = FluidHelper.getFluidForFilledItem(stack);
 
-		if (fluid == null || augmentFuel && !TFFluids.fluidFuel.equals(fluid.getFluid())) {
+		if (fluid == null || augmentFuel && Materials.REFINED_FUEL.getFluid(FluidType.LIQUID) != fluid.getFluid()) {
 			return 0;
 		}
 		return CompressionManager.isValidFuel(fluid) ? CompressionManager.getFuelEnergy(fluid) * (energyMod + coolantFactor) / ENERGY_BASE : 0;
@@ -290,9 +291,9 @@ public class TileDynamoCompression extends TileDynamoBase {
 			coolantTank.setLock(FluidRegistry.WATER);
 			coolantFactor = 0;
 		} else if (augmentFuel) {
-			fuelTank.setLock(TFFluids.fluidFuel);
+			fuelTank.setLock(Materials.REFINED_FUEL.getFluid(FluidType.LIQUID));
 		} else if (augmentBiofuel) {
-			fuelTank.setLock(TFFluids.fluidBiofuel);
+			fuelTank.setLock(Materials.REFINED_BIOFUEL.getFluid(FluidType.LIQUID));
 		}
 	}
 

@@ -13,7 +13,6 @@ import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.entity.projectile.EntityMorb;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.util.BehaviorMorbDispense;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -38,6 +37,8 @@ import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.io.File;
@@ -309,7 +310,7 @@ public class ItemMorb extends ItemMulti implements IInitializer, IModelRegister 
 		addShapelessRecipe(morbStack, Blocks.SOUL_SAND, "crystalSlag", "slimeball", "enderpearl");
 		addShapelessRecipe(morbReusable, morbStandard, "nuggetSignalum", "nuggetSignalum", "nuggetSignalum");
 
-		addShapelessRecipe(morbStack, Blocks.SOUL_SAND, "crystalSlag", ItemMaterial.globRosin, "enderpearl");
+		addShapelessRecipe(morbStack, Blocks.SOUL_SAND, "crystalSlag", Materials.ROSIN.getStack(ItemMaterialType.GLOB, 1), "enderpearl");
 
 		return true;
 	}

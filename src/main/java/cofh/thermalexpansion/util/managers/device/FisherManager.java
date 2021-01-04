@@ -3,11 +3,13 @@ package cofh.thermalexpansion.util.managers.device;
 import cofh.core.inventory.ComparableItemStack;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.core.util.helpers.MathHelper;
-import cofh.thermalfoundation.item.ItemBait;
 import gnu.trove.iterator.TObjectIntIterator;
 import gnu.trove.map.hash.TObjectIntHashMap;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import zone.rong.zairyou.api.material.Material;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +53,9 @@ public class FisherManager {
 
 		/* BAIT */
 		{
-			addBait(ItemBait.baitBasic, 2);
-			addBait(ItemBait.baitRich, 3);
-			addBait(ItemBait.baitFlux, 4);
+			addBait(Material.BASIC.getItem(ItemMaterialType.BAIT, false), 2);
+			addBait(Materials.RICH.getItem(ItemMaterialType.BAIT, false), 3);
+			addBait(Materials.FLUX.getItem(ItemMaterialType.BAIT, false), 4);
 		}
 
 		/* FISH */

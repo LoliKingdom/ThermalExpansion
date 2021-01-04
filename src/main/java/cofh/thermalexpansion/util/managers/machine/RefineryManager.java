@@ -2,7 +2,6 @@ package cofh.thermalexpansion.util.managers.machine;
 
 import cofh.core.init.CoreProps;
 import cofh.core.util.helpers.FluidHelper;
-import cofh.thermalfoundation.init.TFFluids;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.init.PotionTypes;
@@ -11,6 +10,8 @@ import net.minecraft.potion.PotionType;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.Set;
 
@@ -193,16 +194,16 @@ public class RefineryManager {
 			if (inputType == PotionTypes.EMPTY || outputType == PotionTypes.EMPTY) {
 				continue;
 			}
-			FluidStack inputPotion = TFFluids.addPotionToFluidStack(new FluidStack(TFFluids.fluidPotion, inputAmount), inputType);
-			FluidStack outputPotion = TFFluids.addPotionToFluidStack(new FluidStack(TFFluids.fluidPotion, outputAmount), outputType);
+			FluidStack inputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, inputType).getStack(FluidType.LIQUID, inputAmount);
+			FluidStack outputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, outputType).getStack(FluidType.LIQUID, outputAmount);
 			addRecipePotion(DEFAULT_ENERGY / 2, inputPotion, outputPotion);
 
-			inputPotion = TFFluids.addPotionToFluidStack(new FluidStack(TFFluids.fluidPotionSplash, inputAmount), inputType);
-			outputPotion = TFFluids.addPotionToFluidStack(new FluidStack(TFFluids.fluidPotionSplash, outputAmount), outputType);
+			inputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, inputType).getStack(FluidType.LIQUID, inputAmount);
+			outputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, outputType).getStack(FluidType.LIQUID, outputAmount);
 			addRecipePotion(DEFAULT_ENERGY / 2, inputPotion, outputPotion);
 
-			inputPotion = TFFluids.addPotionToFluidStack(new FluidStack(TFFluids.fluidPotionLingering, inputAmount), inputType);
-			outputPotion = TFFluids.addPotionToFluidStack(new FluidStack(TFFluids.fluidPotionLingering, outputAmount), outputType);
+			inputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, inputType).getStack(FluidType.LIQUID, inputAmount);
+			outputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, outputType).getStack(FluidType.LIQUID, outputAmount);
 			addRecipePotion(DEFAULT_ENERGY / 2, inputPotion, outputPotion);
 		}
 	}

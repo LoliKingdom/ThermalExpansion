@@ -18,9 +18,8 @@ import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.block.BlockTEBase;
 import cofh.thermalexpansion.init.TEProps;
+import cofh.thermalexpansion.item.ItemUpgrade;
 import cofh.thermalexpansion.render.BakeryDynamo;
-import cofh.thermalfoundation.item.ItemMaterial;
-import cofh.thermalfoundation.item.ItemUpgrade;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockFaceShape;
@@ -49,6 +48,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -379,7 +380,7 @@ public class BlockDynamo extends BlockTEBase implements IModelRegister, IBakeryP
 					" C ",
 					"IGI",
 					"YXY",
-					'C', ItemMaterial.powerCoilSilver,
+					'C', Materials.SILVER.getStack(ItemMaterialType.COIL, 1),
 					'G', "gearCopper",
 					'I', "ingotIron",
 					'X', "dustRedstone",
@@ -391,7 +392,7 @@ public class BlockDynamo extends BlockTEBase implements IModelRegister, IBakeryP
 					" C ",
 					"IGI",
 					"YXY",
-					'C', ItemMaterial.powerCoilSilver,
+					'C', Materials.SILVER.getStack(ItemMaterialType.COIL, 1),
 					'G', "gearInvar",
 					'I', "ingotIron",
 					'X', "dustRedstone",
@@ -403,7 +404,7 @@ public class BlockDynamo extends BlockTEBase implements IModelRegister, IBakeryP
 					" C ",
 					"IGI",
 					"YXY",
-					'C', ItemMaterial.powerCoilSilver,
+					'C', Materials.SILVER.getStack(ItemMaterialType.COIL, 1),
 					'G', "gearTin",
 					'I', "ingotIron",
 					'X', "dustRedstone",
@@ -415,7 +416,7 @@ public class BlockDynamo extends BlockTEBase implements IModelRegister, IBakeryP
 					" C ",
 					"IGI",
 					"YXY",
-					'C', ItemMaterial.powerCoilSilver,
+					'C', Materials.SILVER.getStack(ItemMaterialType.COIL, 1),
 					'G', "gearLead",
 					'I', "ingotIron",
 					'X', "dustRedstone",
@@ -427,7 +428,7 @@ public class BlockDynamo extends BlockTEBase implements IModelRegister, IBakeryP
 					" C ",
 					"IGI",
 					"YXY",
-					'C', ItemMaterial.powerCoilSilver,
+					'C', Materials.SILVER.getStack(ItemMaterialType.COIL, 1),
 					'G', "gearElectrum",
 					'I', "ingotIron",
 					'X', "dustRedstone",
@@ -439,7 +440,7 @@ public class BlockDynamo extends BlockTEBase implements IModelRegister, IBakeryP
 					" C ",
 					"IGI",
 					"YXY",
-					'C', ItemMaterial.powerCoilSilver,
+					'C', Materials.SILVER.getStack(ItemMaterialType.COIL, 1),
 					'G', "gearConstantan",
 					'I', "ingotIron",
 					'X', "dustRedstone",

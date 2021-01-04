@@ -22,8 +22,6 @@ import cofh.core.util.core.IInitializer;
 import cofh.core.util.helpers.*;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.render.item.ModelReservoir;
-import cofh.thermalfoundation.init.TFProps;
-import cofh.thermalfoundation.item.ItemMaterial;
 import com.google.common.collect.Iterables;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -57,6 +55,8 @@ import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -124,13 +124,7 @@ public class ItemReservoir extends ItemMulti implements IInitializer, IBauble, I
 
 		if (enable && isInCreativeTab(tab)) {
 			for (int metadata : itemList) {
-				if (metadata != CREATIVE) {
-					items.add(new ItemStack(this, 1, metadata));
-				} else {
-					if (TFProps.showCreativeItems) {
-						items.add(new ItemStack(this, 1, metadata));
-					}
-				}
+				items.add(new ItemStack(this, 1, metadata));
 			}
 		}
 	}
@@ -546,7 +540,7 @@ public class ItemReservoir extends ItemMulti implements IInitializer, IBauble, I
 				'I', "ingotCopper",
 				'R', "ingotTin",
 				'X', Items.BUCKET,
-				'Y', ItemMaterial.redstoneServo
+				'Y', Materials.REDSTONE.getStack(ItemMaterialType.SERVO, 1)
 		);
 
 		addShapedUpgradeRecipe(reservoirHardened,

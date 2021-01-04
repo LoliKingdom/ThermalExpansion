@@ -12,7 +12,6 @@ import cofh.core.util.helpers.*;
 import cofh.redstoneflux.api.IEnergyContainerItem;
 import cofh.redstoneflux.util.EnergyContainerItemWrapper;
 import cofh.thermalexpansion.ThermalExpansion;
-import cofh.thermalfoundation.init.TFProps;
 import com.google.common.collect.Iterables;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -95,16 +94,10 @@ public class ItemCapacitor extends ItemMultiRF implements IInitializer, IBauble 
 		if (enable && isInCreativeTab(tab)) {
 			for (int metadata : itemList) {
 				if (metadata != CREATIVE) {
-					if (TFProps.showEmptyItems) {
-						items.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, metadata), 0));
-					}
-					if (TFProps.showFullItems) {
-						items.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, metadata), getBaseCapacity(metadata)));
-					}
+					items.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, metadata), 0));
+					items.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, metadata), getBaseCapacity(metadata)));
 				} else {
-					if (TFProps.showCreativeItems) {
-						items.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, metadata), getBaseCapacity(metadata)));
-					}
+					items.add(EnergyHelper.setDefaultEnergyTag(new ItemStack(this, 1, metadata), getBaseCapacity(metadata)));
 				}
 			}
 		}

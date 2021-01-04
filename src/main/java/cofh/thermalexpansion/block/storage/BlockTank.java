@@ -16,9 +16,8 @@ import cofh.core.util.helpers.MathHelper;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.block.BlockTEBase;
 import cofh.thermalexpansion.init.TEProps;
+import cofh.thermalexpansion.item.ItemUpgrade;
 import cofh.thermalexpansion.render.BakeryTank;
-import cofh.thermalfoundation.item.ItemMaterial;
-import cofh.thermalfoundation.item.ItemUpgrade;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
@@ -44,6 +43,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import static cofh.core.util.helpers.RecipeHelper.*;
 
@@ -320,7 +321,7 @@ public class BlockTank extends BlockTEBase implements IModelRegister, IBakeryPro
 					" P ",
 					'C', "ingotCopper",
 					'I', "blockGlass",
-					'P', ItemMaterial.redstoneServo
+					'P', Materials.REDSTONE.getStack(ItemMaterialType.SERVO, 1)
 			);
 		}
 		// @formatter:on
@@ -358,7 +359,7 @@ public class BlockTank extends BlockTEBase implements IModelRegister, IBakeryPro
 				"YPY",
 				'C', "ingotCopper",
 				'I', "blockGlass",
-				'P', ItemMaterial.redstoneServo,
+				'P', Materials.REDSTONE.getStack(ItemMaterialType.SERVO, 1),
 				'Y', "ingotInvar"
 		);
 		addShapedUpgradeRecipe(tank[1],

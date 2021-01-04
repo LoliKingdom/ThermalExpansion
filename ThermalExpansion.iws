@@ -23,7 +23,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e611ef-87d9-48b3-b6e9-8746964ea1bb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemSecurity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemUpgrade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ThermalExpansion.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ThermalExpansion.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ThermalExpansion.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ThermalExpansion.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/device/TileDiffuser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/device/TileDiffuser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/BlockDynamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/BlockDynamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/TileDynamoBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/TileDynamoBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/TileDynamoCompression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/TileDynamoCompression.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/TileDynamoSteam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/dynamo/TileDynamoSteam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/BlockMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/BlockMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TileCharger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TileCharger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TileFurnace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TileFurnace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TilePulverizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TilePulverizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TileSmelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/machine/TileSmelter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockStrongbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockStrongbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/block/storage/BlockTank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/init/TEItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/init/TEItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemCapacitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemCapacitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemFlorb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemFlorb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemMorb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemMorb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemReservoir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemReservoir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemSatchel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/item/ItemSatchel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/enchanter/EnchanterRecipeWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/enchanter/EnchanterRecipeWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/furnace/FurnaceRecipeWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/furnace/FurnaceRecipeWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/pulverizer/PulverizerRecipeWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/pulverizer/PulverizerRecipeWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/smelter/SmelterRecipeWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/smelter/SmelterRecipeWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/transposer/TransposerRecipeCategoryExtract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/transposer/TransposerRecipeCategoryExtract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/transposer/TransposerRecipeCategoryFill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/jei/machine/transposer/TransposerRecipeCategoryFill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/render/RenderCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/render/RenderCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/device/FactorizerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/device/FactorizerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/device/FisherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/device/FisherManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/device/XpCollectorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/device/XpCollectorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/BrewerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/BrewerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/EnchanterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/EnchanterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/RefineryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/RefineryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/SawmillManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/SawmillManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/TransposerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/TransposerManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,9 +120,22 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ThermalExpansion" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ThermalExpansion" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -142,6 +194,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.1133787" />
   </component>
   <component name="RunManager" selected="Application.Minecraft Server">
     <configuration default="true" factoryName="Applet" type="Applet">
@@ -260,6 +316,8 @@
       <workItem from="1608562601297" duration="5236000" />
       <workItem from="1608998853686" duration="6600000" />
       <workItem from="1609087737558" duration="2721000" />
+      <workItem from="1609557838568" duration="6817000" />
+      <workItem from="1609723717445" duration="10571000" />
     </task>
     <servers />
   </component>
@@ -295,10 +353,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608220723714" />
-    <state x="641" y="256" width="837" height="528" key="find.popup" timestamp="1609090743220">
+    <state x="431" y="94" key="SettingsEditor" timestamp="1609696408571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="641" y="256" width="837" height="528" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609090743220" />
+    <state x="431" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609696408571" />
+    <state x="641" y="256" width="861" height="552" key="find.popup" timestamp="1609782988655">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="641" y="256" width="861" height="552" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609782988655" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1609782813695">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609782813695" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1609002742251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

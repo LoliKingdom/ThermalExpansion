@@ -2,7 +2,6 @@ package cofh.thermalexpansion.plugins.jei.machine.pulverizer;
 
 import cofh.core.util.helpers.ItemHelper;
 import cofh.core.util.helpers.StringHelper;
-import cofh.thermalexpansion.block.machine.TileBrewer;
 import cofh.thermalexpansion.block.machine.TilePulverizer;
 import cofh.thermalexpansion.plugins.jei.Drawables;
 import cofh.thermalexpansion.plugins.jei.JEIPluginTE;
@@ -10,7 +9,6 @@ import cofh.thermalexpansion.plugins.jei.RecipeUidsTE;
 import cofh.thermalexpansion.plugins.jei.machine.BaseRecipeWrapper;
 import cofh.thermalexpansion.util.managers.machine.PulverizerManager;
 import cofh.thermalexpansion.util.managers.machine.PulverizerManager.PulverizerRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawableAnimated;
 import mezz.jei.api.gui.IDrawableAnimated.StartDirection;
@@ -20,6 +18,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,7 +63,7 @@ public class PulverizerRecipeWrapper extends BaseRecipeWrapper {
 			recipeInputs.add(recipe.getInput());
 		}
 		if (uId.equals(RecipeUidsTE.PULVERIZER_PETROTHEUM)) {
-			recipeInputFluids.add(new FluidStack(TFFluids.fluidPetrotheum, TilePulverizer.FLUID_AMOUNT));
+			recipeInputFluids.add(Materials.PETROTHEUM.getStack(FluidType.MOLTEN, TilePulverizer.FLUID_AMOUNT));
 			inputFluids = recipeInputFluids;
 			recipeOutputs.add(ItemHelper.cloneStack(recipe.getPrimaryOutput(), TilePulverizer.getPetrotheumOutputAmount(recipe.getPrimaryOutput())));
 			energy = recipe.getEnergy() * (100 + TilePulverizer.PETROTHEUM_ENERGY_MOD) / 100;

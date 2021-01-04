@@ -1,7 +1,6 @@
 package cofh.thermalexpansion.plugins.jei.machine.enchanter;
 
 import cofh.core.util.helpers.ItemHelper;
-import cofh.thermalexpansion.block.machine.TileBrewer;
 import cofh.thermalexpansion.block.machine.TileEnchanter;
 import cofh.thermalexpansion.plugins.jei.Drawables;
 import cofh.thermalexpansion.plugins.jei.JEIPluginTE;
@@ -10,7 +9,6 @@ import cofh.thermalexpansion.plugins.jei.machine.BaseRecipeWrapper;
 import cofh.thermalexpansion.util.managers.machine.EnchanterManager;
 import cofh.thermalexpansion.util.managers.machine.EnchanterManager.EnchanterRecipe;
 import cofh.thermalexpansion.util.managers.machine.EnchanterManager.Type;
-import cofh.thermalfoundation.init.TFFluids;
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawableAnimated;
 import mezz.jei.api.gui.IDrawableAnimated.StartDirection;
@@ -20,6 +18,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +71,7 @@ public class EnchanterRecipeWrapper extends BaseRecipeWrapper {
 		}
 		recipeInputs.add(recipeInputsPrimary);
 		recipeInputs.add(recipeInputsSecondary);
-		recipeInputFluids.add(new FluidStack(TFFluids.fluidExperience, recipe.getExperience()));
+		recipeInputFluids.add(Materials.EXPERIENCE.getStack(FluidType.LIQUID, recipe.getExperience()));
 
 		List<ItemStack> recipeOutputs = new ArrayList<>();
 		recipeOutputs.add(recipe.getOutput());

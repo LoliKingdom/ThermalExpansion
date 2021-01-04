@@ -17,9 +17,8 @@ import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.block.BlockTEBase;
 import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.item.ItemFrame;
+import cofh.thermalexpansion.item.ItemUpgrade;
 import cofh.thermalexpansion.render.BakeryCell;
-import cofh.thermalfoundation.item.ItemMaterial;
-import cofh.thermalfoundation.item.ItemUpgrade;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -41,6 +40,8 @@ import net.minecraftforge.common.property.IExtendedBlockState;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import static cofh.core.util.helpers.RecipeHelper.*;
 
@@ -260,7 +261,7 @@ public class BlockCell extends BlockTEBase implements IModelRegister, IBakeryPro
 					" P ",
 					'C', ItemFrame.frameCell0,
 					'I', "ingotLead",
-					'P', ItemMaterial.powerCoilElectrum,
+					'P', Materials.ELECTRUM.getStack(ItemMaterialType.COIL, 1),
 					'X', Blocks.REDSTONE_BLOCK
 			);
 		}
@@ -299,7 +300,7 @@ public class BlockCell extends BlockTEBase implements IModelRegister, IBakeryPro
 				"YPY",
 				'C', ItemFrame.frameCell0,
 				'I', "ingotLead",
-				'P', ItemMaterial.powerCoilElectrum,
+				'P', Materials.ELECTRUM.getStack(ItemMaterialType.COIL, 1),
 				'X', Blocks.REDSTONE_BLOCK,
 				'Y', "ingotInvar"
 		);
@@ -309,7 +310,7 @@ public class BlockCell extends BlockTEBase implements IModelRegister, IBakeryPro
 				" P ",
 				'C', ItemFrame.frameCell1,
 				'I', "ingotLead",
-				'P', ItemMaterial.powerCoilElectrum,
+				'P', Materials.ELECTRUM.getStack(ItemMaterialType.COIL, 1),
 				'X', Blocks.REDSTONE_BLOCK
 		);
 		addShapedRecipe(cell[2],
@@ -318,7 +319,7 @@ public class BlockCell extends BlockTEBase implements IModelRegister, IBakeryPro
 				" P ",
 				'C', ItemFrame.frameCell2Filled,
 				'I', "ingotLead",
-				'P', ItemMaterial.powerCoilElectrum,
+				'P', Materials.ELECTRUM.getStack(ItemMaterialType.COIL, 1),
 				'X', "ingotSilver"
 		);
 		addShapedRecipe(cell[3],
@@ -327,7 +328,7 @@ public class BlockCell extends BlockTEBase implements IModelRegister, IBakeryPro
 				" P ",
 				'C', ItemFrame.frameCell3Filled,
 				'I', "ingotLead",
-				'P', ItemMaterial.powerCoilElectrum,
+				'P', Materials.ELECTRUM.getStack(ItemMaterialType.COIL, 1),
 				'X', "ingotSilver"
 		);
 		addShapedRecipe(cell[4],
@@ -336,7 +337,7 @@ public class BlockCell extends BlockTEBase implements IModelRegister, IBakeryPro
 				" P ",
 				'C', ItemFrame.frameCell4Filled,
 				'I', "ingotLead",
-				'P', ItemMaterial.powerCoilElectrum,
+				'P', Materials.ELECTRUM.getStack(ItemMaterialType.COIL, 1),
 				'X', "ingotSilver"
 		);
 

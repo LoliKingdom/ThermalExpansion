@@ -3,7 +3,7 @@ package cofh.thermalexpansion.render;
 import cofh.core.render.RenderUtils;
 import cofh.core.util.helpers.RenderHelper;
 import cofh.thermalexpansion.block.storage.TileCache;
-import cofh.thermalfoundation.item.ItemSecurity;
+import cofh.thermalexpansion.item.ItemSecurity;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.init.Items;

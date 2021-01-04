@@ -2,9 +2,6 @@ package cofh.thermalexpansion.util.managers.device;
 
 import cofh.core.inventory.ComparableItemStackValidated;
 import cofh.core.util.helpers.ItemHelper;
-import cofh.thermalfoundation.block.BlockStorage;
-import cofh.thermalfoundation.block.BlockStorageAlloy;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -68,6 +65,7 @@ public class FactorizerManager {
 		addDefaultRecipe(new ItemStack(Items.QUARTZ), new ItemStack(Blocks.QUARTZ_BLOCK), 4);
 		addDefaultRecipe(new ItemStack(Items.REDSTONE), new ItemStack(Blocks.REDSTONE_BLOCK));
 
+		/*
 		addDefaultRecipe(ItemMaterial.ingotIron, new ItemStack(Blocks.IRON_BLOCK));
 		addDefaultRecipe(ItemMaterial.ingotGold, new ItemStack(Blocks.GOLD_BLOCK));
 		addDefaultRecipe(ItemMaterial.gemDiamond, new ItemStack(Blocks.DIAMOND_BLOCK));
@@ -115,6 +113,7 @@ public class FactorizerManager {
 		addDefaultRecipe(ItemMaterial.nuggetSignalum, ItemMaterial.ingotSignalum);
 		addDefaultRecipe(ItemMaterial.nuggetLumium, ItemMaterial.ingotLumium);
 		addDefaultRecipe(ItemMaterial.nuggetEnderium, ItemMaterial.ingotEnderium);
+		 */
 
 		/* LOAD RECIPES */
 		loadRecipes();

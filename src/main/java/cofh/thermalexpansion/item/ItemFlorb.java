@@ -20,7 +20,6 @@ import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.render.item.ModelFlorb;
 import cofh.thermalexpansion.util.BehaviorFlorbDispense;
 import cofh.thermalexpansion.util.managers.machine.TransposerManager;
-import cofh.thermalfoundation.item.ItemMaterial;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -42,6 +41,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -270,8 +271,8 @@ public class ItemFlorb extends ItemMulti implements IInitializer, IBakeryProvide
 		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", "slimeball", Items.BLAZE_POWDER);
 		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", Items.MAGMA_CREAM);
 
-		addShapelessRecipe(florbStack, "dustWood", "crystalSlag", ItemMaterial.globRosin);
-		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", ItemMaterial.globRosin, Items.BLAZE_POWDER);
+		addShapelessRecipe(florbStack, "dustWood", "crystalSlag", Materials.ROSIN.getStack(ItemMaterialType.GLOB, 1));
+		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", Materials.ROSIN.getStack(ItemMaterialType.GLOB, 1), Items.BLAZE_POWDER);
 
 		return true;
 	}
@@ -292,7 +293,7 @@ public class ItemFlorb extends ItemMulti implements IInitializer, IBakeryProvide
 	public static final ConfigHandler CONFIG_FLORBS = new ConfigHandler(ThermalExpansion.VERSION);
 
 	public static ArrayList<ItemStack> florbList = new ArrayList<>();
-	public static Map<String, ItemStack> florbMap = new DefaultedHashMap<String, ItemStack>(ItemStack.EMPTY);
+	public static Map<String, ItemStack> florbMap = new DefaultedHashMap<>(ItemStack.EMPTY);
 
 	public static String[] blacklist = new String[] {};
 	public static boolean enable = true;

@@ -17,7 +17,6 @@ import cofh.thermalexpansion.init.TEProps;
 import cofh.thermalexpansion.init.TESounds;
 import cofh.thermalexpansion.util.managers.machine.SmelterManager;
 import cofh.thermalexpansion.util.managers.machine.SmelterManager.SmelterRecipe;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
@@ -32,6 +31,8 @@ import net.minecraftforge.fluids.capability.FluidTankProperties;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -118,7 +119,7 @@ public class TileSmelter extends TileMachineBase {
 		inventory = new ItemStack[2 + 1 + 1 + 1];
 		Arrays.fill(inventory, ItemStack.EMPTY);
 		createAllSlots(inventory.length);
-		tank.setLock(TFFluids.fluidPyrotheum);
+		tank.setLock(Materials.PYROTHEUM.getFluid(FluidType.MOLTEN));
 	}
 
 	@Override
@@ -534,7 +535,7 @@ public class TileSmelter extends TileMachineBase {
 			augmentPyrotheum = true;
 			hasModeAugment = true;
 			energyMod += PYROTHEUM_ENERGY_MOD;
-			tank.setLock(TFFluids.fluidPyrotheum);
+			tank.setLock(Materials.PYROTHEUM.getFluid(FluidType.MOLTEN));
 			return true;
 		}
 		return super.installAugmentToSlot(slot);

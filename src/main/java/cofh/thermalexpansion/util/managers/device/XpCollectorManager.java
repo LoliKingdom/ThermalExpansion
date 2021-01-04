@@ -1,12 +1,13 @@
 package cofh.thermalexpansion.util.managers.device;
 
 import cofh.core.inventory.ComparableItemStack;
-import cofh.thermalfoundation.item.ItemMaterial;
 import gnu.trove.iterator.TObjectIntIterator;
 import gnu.trove.map.hash.TObjectIntHashMap;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 public class XpCollectorManager {
 
@@ -35,7 +36,7 @@ public class XpCollectorManager {
 		{
 			addCatalyst(new ItemStack(Blocks.SOUL_SAND), 50, 50);
 			addCatalyst(new ItemStack(Items.DYE, 1, 4), 100, 100);
-			addCatalyst(ItemMaterial.dustMana, 200, 150);
+			addCatalyst(Materials.PRIMAL_MANA.getItem(ItemMaterialType.DUST, false), 200, 150);
 		}
 	}
 

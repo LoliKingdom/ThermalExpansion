@@ -21,7 +21,6 @@ import cofh.redstoneflux.api.IEnergyStorage;
 import cofh.redstoneflux.impl.EnergyStorage;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalexpansion.init.TEProps;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -38,6 +37,8 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zone.rong.zairyou.api.fluid.FluidType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -400,7 +401,7 @@ public abstract class TileDynamoBase extends TileInventory implements ITickable,
 
 	protected void transferSteam() {
 
-		FluidHelper.insertFluidIntoAdjacentFluidHandler(world, pos, EnumFacing.VALUES[facing], new FluidStack(TFFluids.fluidSteam, energyConfig.maxPower), true);
+		FluidHelper.insertFluidIntoAdjacentFluidHandler(world, pos, EnumFacing.VALUES[facing], Materials.STEAM.getStack(FluidType.GASEOUS, energyConfig.maxPower), true);
 	}
 
 	protected void transferEnergy() {
@@ -454,7 +455,7 @@ public abstract class TileDynamoBase extends TileInventory implements ITickable,
 	@SideOnly (Side.CLIENT)
 	public TextureAtlasSprite getCoilUnderlayTexture() {
 
-		return TextureHelper.getTexture(TFFluids.fluidSteam.getStill());
+		return TextureHelper.getTexture(Materials.STEAM.getFluid(FluidType.GASEOUS).getStill());
 	}
 
 	@SideOnly (Side.CLIENT)
