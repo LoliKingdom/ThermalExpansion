@@ -6,12 +6,12 @@ import cofh.core.inventory.OreValidator;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.core.util.helpers.StringHelper;
 import cofh.thermalexpansion.ThermalExpansion;
-import cofh.thermalfoundation.init.TFEquipment.ToolSetVanilla;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -78,7 +78,7 @@ public class PulverizerManager {
 
 			/* WOODEN TOOLS / ARMOR */
 			int energy = DEFAULT_ENERGY * 3 / 4;
-			ItemStack output = ItemMaterial.dustWood;
+			ItemStack output = Materials.WOOD.getItem(ItemMaterialType.DUST, false);
 
 			addRecycleRecipe(energy, new ItemStack(Items.WOODEN_SWORD), output, 2);
 			addRecycleRecipe(energy, new ItemStack(Items.WOODEN_PICKAXE), output, 2);
@@ -86,13 +86,13 @@ public class PulverizerManager {
 			addRecycleRecipe(energy, new ItemStack(Items.WOODEN_SHOVEL), output, 2);
 			addRecycleRecipe(energy, new ItemStack(Items.WOODEN_HOE), output, 2);
 
-			addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolBow, output, 2);
-			addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolFishingRod, output, 2);
-			addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolShears, output, 2);
-			addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolSickle, output, 2);
-			addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolHammer, output, 4);
-			addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolExcavator, output, 2);
-			addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolShield, output, 6);
+			addRecycleRecipe(energy, new ItemStack(Items.BOW), output, 2);
+			addRecycleRecipe(energy, new ItemStack(Items.FISHING_ROD), output, 2);
+			addRecycleRecipe(energy, new ItemStack(Items.SHEARS), output, 2); // TODO???
+			// addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolSickle, output, 2);
+			// addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolHammer, output, 4);
+			// addRecycleRecipe(energy, ToolSetVanilla.WOOD.toolExcavator, output, 2);
+			addRecycleRecipe(energy, new ItemStack(Items.SHIELD), output, 6);
 
 			/* DIAMOND TOOLS / ARMOR */
 			energy = DEFAULT_ENERGY * 3 / 2;
@@ -111,13 +111,14 @@ public class PulverizerManager {
 
 			addRecycleRecipe(energy, new ItemStack(Items.DIAMOND_HORSE_ARMOR), output, 2);
 
-			addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolBow, output, 1);
-			addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolFishingRod, output, 1);
-			addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolShears, output, 1);
-			addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolSickle, output, 1);
-			addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolHammer, output, 2);
-			addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolExcavator, output, 1);
-			addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolShield, output, 3);
+			// TODO - determine if this accepts ItemStacks with nbt values
+			// addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolBow, output, 1);
+			// addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolFishingRod, output, 1);
+			// addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolShears, output, 1);
+			// addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolSickle, output, 1);
+			// addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolHammer, output, 2);
+			// addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolExcavator, output, 1);
+			// addRecycleRecipe(energy, ToolSetVanilla.DIAMOND.toolShield, output, 3);
 		}
 
 		/* GENERAL SCAN */
