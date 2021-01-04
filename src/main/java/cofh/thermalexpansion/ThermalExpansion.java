@@ -79,7 +79,7 @@ public class ThermalExpansion {
 		TEBlocks.preInit();
 		TEItems.preInit();
 		TESounds.preInit();
-		TEPlugins.preInit();
+		// TODO: temporarily disabled: TEPlugins.preInit();
 
 		/* Register Handlers */
 		registerHandlers();
@@ -103,7 +103,7 @@ public class ThermalExpansion {
 		ItemFlorb.parseFlorbs();
 		ItemMorb.parseMorbs();
 
-		TEPlugins.initialize();
+		// TODO: temporarily disabled: TEPlugins.initialize();
 
 		initManagers();
 
