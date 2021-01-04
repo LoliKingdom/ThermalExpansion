@@ -5,17 +5,15 @@ import cofh.core.inventory.ComparableItemStackValidatedNBT;
 import cofh.core.inventory.OreValidator;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.core.util.helpers.StringHelper;
-import cofh.thermalfoundation.init.TFEquipment.ArmorSet;
-import cofh.thermalfoundation.init.TFEquipment.HorseArmor;
-import cofh.thermalfoundation.init.TFEquipment.ToolSet;
-import cofh.thermalfoundation.init.TFEquipment.ToolSetVanilla;
-import cofh.thermalfoundation.item.ItemMaterial;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import zone.rong.zairyou.api.material.Material;
+import zone.rong.zairyou.api.material.type.ItemMaterialType;
+import zone.rong.zairyou.objects.Materials;
 
 import java.util.List;
 import java.util.Map;
@@ -166,14 +164,15 @@ public class SmelterManager {
 		{
 			addFlux(BLOCK_SAND);
 			addFlux(BLOCK_SOUL_SAND);
-			addFlux(ItemMaterial.crystalSlagRich);
-			addFlux(ItemMaterial.crystalCinnabar);
+			addFlux(Materials.RICH.getItem(ItemMaterialType.SLAG, false));
+			addFlux(Materials.CINNABAR.getItem(ItemMaterialType.CRYSTAL, false));
 		}
 	}
 
 	public static void initialize() {
 
 		/* ORES */
+		/*
 		{
 			addDefaultRecipes("Iron", ItemMaterial.ingotIron, ItemMaterial.ingotNickel);
 			addDefaultRecipes("Gold", ItemMaterial.ingotGold, ItemStack.EMPTY, 20);
@@ -188,8 +187,10 @@ public class SmelterManager {
 			addDefaultRecipes("Iridium", ItemMaterial.ingotIridium, ItemMaterial.ingotPlatinum);
 			addDefaultRecipes("Mithril", ItemMaterial.ingotMithril, ItemMaterial.ingotGold);
 		}
+		 */
 
 		/* DUSTS */
+		/*
 		{
 			addDefaultRecipes("Steel", ItemMaterial.ingotSteel);
 			addDefaultRecipes("Electrum", ItemMaterial.ingotElectrum);
@@ -200,6 +201,7 @@ public class SmelterManager {
 			addDefaultRecipes("Lumium", ItemMaterial.ingotLumium);
 			addDefaultRecipes("Enderium", ItemMaterial.ingotEnderium);
 		}
+		 */
 
 		/* RECYCLING */
 		{
@@ -239,6 +241,8 @@ public class SmelterManager {
 			addRecycleRecipe(energy, new ItemStack(Items.GOLDEN_HORSE_ARMOR), ingot, 2, false);
 
 			/* THERMAL FOUNDATION */
+			// TODO
+			/*
 			for (ToolSetVanilla tool : new ToolSetVanilla[] { ToolSetVanilla.IRON, ToolSetVanilla.GOLD }) {
 				ingot = ItemHelper.getOre(tool.ingot);
 
@@ -326,6 +330,7 @@ public class SmelterManager {
 					addRecycleRecipe(energy, armor.armor, ingot, 2, false);
 				}
 			}
+			 */
 		}
 
 		/* GENERAL SCAN */
@@ -487,19 +492,21 @@ public class SmelterManager {
 		ItemStack ingot2 = ItemHelper.cloneStack(output, oreMultiplier);
 		ItemStack ingot3 = ItemHelper.cloneStack(output, oreMultiplierSpecial);
 
-		addRecipe(energy, input, BLOCK_SAND, ingot2, ItemMaterial.crystalSlagRich, richSlagChance);
-		addRecipe(energy, input, ItemMaterial.crystalSlagRich, ingot3, ItemMaterial.crystalSlag, slagChance);
+		ItemStack crystalSlagRich = Materials.RICH.getItem(ItemMaterialType.SLAG, false);
+
+		addRecipe(energy, input, BLOCK_SAND, ingot2, crystalSlagRich, richSlagChance);
+		addRecipe(energy, input, crystalSlagRich, ingot3, Material.BASIC.getItem(ItemMaterialType.SLAG, false), slagChance);
 
 		if (!secondary.isEmpty()) {
-			addRecipe(energy, input, ItemMaterial.crystalCinnabar, ingot3, secondary, 100);
+			addRecipe(energy, input, Materials.CINNABAR.getItem(ItemMaterialType.CRYSTAL, false), ingot3, secondary, 100);
 		} else {
-			addRecipe(energy, input, ItemMaterial.crystalCinnabar, ingot3, ItemMaterial.crystalSlagRich, 75);
+			addRecipe(energy, input, Materials.CINNABAR.getItem(ItemMaterialType.CRYSTAL, false), ingot3, crystalSlagRich, 75);
 		}
 	}
 
 	private static void addBasicRecipe(int energy, ItemStack input, ItemStack output, int slagChance) {
 
-		addRecipe(energy, input, BLOCK_SAND, output, ItemMaterial.crystalSlag, slagChance);
+		addRecipe(energy, input, BLOCK_SAND, output, Material.BASIC.getItem(ItemMaterialType.SLAG, false), slagChance);
 	}
 
 	public static void addRecycleRecipe(int energy, ItemStack input, ItemStack output, int outputSize) {
