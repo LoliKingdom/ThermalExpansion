@@ -2,6 +2,8 @@ package cofh.thermalexpansion;
 
 import codechicken.lib.CodeChickenLib;
 import cofh.CoFHCore;
+import cofh.core.init.CoreEnchantments;
+import cofh.core.init.CorePotions;
 import cofh.core.init.CoreProps;
 import cofh.core.util.ConfigHandler;
 import cofh.thermalexpansion.gui.GuiHandler;
@@ -79,7 +81,11 @@ public class ThermalExpansion {
 		TEBlocks.preInit();
 		TEItems.preInit();
 		TESounds.preInit();
+
 		// TODO: temporarily disabled: TEPlugins.preInit();
+
+		CoreEnchantments.register();
+		CorePotions.register();
 
 		/* Register Handlers */
 		registerHandlers();
