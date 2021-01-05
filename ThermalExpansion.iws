@@ -23,9 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e611ef-87d9-48b3-b6e9-8746964ea1bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ThermalExpansion.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/ThermalExpansion.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ThermalExpansion.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ThermalExpansion.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/SmelterManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/SmelterManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/BrewerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/BrewerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/RefineryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/RefineryManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/TransposerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/TransposerManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +99,18 @@
                 <item name="ThermalExpansion" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ThermalExpansion" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ThermalExpansion" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="forgegradle" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -162,7 +175,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.1133787" />
   </component>
-  <component name="RunManager" selected="Application.Minecraft Server">
+  <component name="RunManager" selected="Gradle.ThermalExpansion [build]">
     <configuration default="true" factoryName="Applet" type="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -210,18 +223,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ThermalExpansion [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -249,7 +268,13 @@
     <list>
       <item itemvalue="Application.Minecraft Client" />
       <item itemvalue="Application.Minecraft Server" />
+      <item itemvalue="Gradle.ThermalExpansion [build]" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.ThermalExpansion [build]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
@@ -281,6 +306,7 @@
       <workItem from="1609087737558" duration="2721000" />
       <workItem from="1609557838568" duration="6817000" />
       <workItem from="1609723717445" duration="11191000" />
+      <workItem from="1609865576766" duration="1454000" />
     </task>
     <servers />
   </component>
@@ -316,6 +342,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608220723714" />
+    <state width="1879" height="165" key="GridCell.Tab.0.bottom" timestamp="1609866503479">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503479" />
+    <state width="1879" height="165" key="GridCell.Tab.0.center" timestamp="1609866503479">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503479" />
+    <state width="1879" height="165" key="GridCell.Tab.0.left" timestamp="1609866503478">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503478" />
+    <state width="1879" height="165" key="GridCell.Tab.0.right" timestamp="1609866503479">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503479" />
     <state x="431" y="94" key="SettingsEditor" timestamp="1609696408571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

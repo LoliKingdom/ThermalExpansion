@@ -194,16 +194,16 @@ public class RefineryManager {
 			if (inputType == PotionTypes.EMPTY || outputType == PotionTypes.EMPTY) {
 				continue;
 			}
-			FluidStack inputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, inputType).getStack(FluidType.LIQUID, inputAmount);
-			FluidStack outputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, outputType).getStack(FluidType.LIQUID, outputAmount);
+			FluidStack inputPotion = Materials.Potions.getNormalFluid(inputType, inputAmount);
+			FluidStack outputPotion = Materials.Potions.getNormalFluid(outputType, outputAmount);
 			addRecipePotion(DEFAULT_ENERGY / 2, inputPotion, outputPotion);
 
-			inputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, inputType).getStack(FluidType.LIQUID, inputAmount);
-			outputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, outputType).getStack(FluidType.LIQUID, outputAmount);
+			inputPotion = Materials.Potions.getSplashFluid(inputType, inputAmount);
+			outputPotion = Materials.Potions.getSplashFluid(outputType, outputAmount);
 			addRecipePotion(DEFAULT_ENERGY / 2, inputPotion, outputPotion);
 
-			inputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, inputType).getStack(FluidType.LIQUID, inputAmount);
-			outputPotion = Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, outputType).getStack(FluidType.LIQUID, outputAmount);
+			inputPotion = Materials.Potions.getLingeringFluid(inputType, inputAmount);
+			outputPotion = Materials.Potions.getLingeringFluid(outputType, outputAmount);
 			addRecipePotion(DEFAULT_ENERGY / 2, inputPotion, outputPotion);
 		}
 	}

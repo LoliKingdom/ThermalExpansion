@@ -246,14 +246,14 @@ public class BrewerManager {
 
 	public static void addDefaultPotionRecipes(PotionType input, ItemStack reagent, PotionType output) {
 		addRecipe(DEFAULT_ENERGY, reagent,
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, input).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, output).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+				Materials.Potions.getNormalFluid(input, DEFAULT_AMOUNT),
+				Materials.Potions.getNormalFluid(output, DEFAULT_AMOUNT));
 		addRecipe(DEFAULT_ENERGY, reagent,
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, input).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, output).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+				Materials.Potions.getSplashFluid(input, DEFAULT_AMOUNT),
+				Materials.Potions.getSplashFluid(output, DEFAULT_AMOUNT));
 		addRecipe(DEFAULT_ENERGY, reagent,
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, input).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, output).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+				Materials.Potions.getLingeringFluid(input, DEFAULT_AMOUNT),
+				Materials.Potions.getLingeringFluid(output, DEFAULT_AMOUNT));
 
 		addSwapPotionRecipes(input);
 		addSwapPotionRecipes(output);
@@ -261,11 +261,11 @@ public class BrewerManager {
 
 	public static void addSwapPotionRecipes(PotionType potion) {
 		addRecipe(DEFAULT_ENERGY, new ItemStack(Items.GUNPOWDER),
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+				Materials.Potions.getNormalFluid(potion, DEFAULT_AMOUNT),
+				Materials.Potions.getSplashFluid(potion, DEFAULT_AMOUNT));
 		addRecipe(DEFAULT_ENERGY, new ItemStack(Items.DRAGON_BREATH),
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT),
-				Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, potion).getStack(FluidType.LIQUID, DEFAULT_AMOUNT));
+				Materials.Potions.getSplashFluid(potion, DEFAULT_AMOUNT),
+				Materials.Potions.getLingeringFluid(potion, DEFAULT_AMOUNT));
 	}
 
 	public static void addSwapPotionRecipes(String baseName, int maxRank) {

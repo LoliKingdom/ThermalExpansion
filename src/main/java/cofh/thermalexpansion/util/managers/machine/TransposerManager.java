@@ -345,10 +345,10 @@ public class TransposerManager {
 
 	public static void addDefaultPotionRecipes(PotionType type) {
 
-		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM, 1), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.NORMAL, type).getStack(FluidType.LIQUID, CoreProps.BOTTLE_VOLUME), true);
-		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION, 1), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.SPLASH, type).getStack(FluidType.LIQUID, CoreProps.BOTTLE_VOLUME), true);
-		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.LINGERING_POTION, 1), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, type).getStack(FluidType.LIQUID, CoreProps.BOTTLE_VOLUME), true);
-		addFillRecipe(DEFAULT_ENERGY, new ItemStack(Items.ARROW), PotionUtils.addPotionToItemStack(new ItemStack(Items.TIPPED_ARROW), type), Materials.Potions.getMaterial(Materials.Potions.PotionFormat.LINGERING, type).getStack(FluidType.LIQUID,CoreProps.BOTTLE_VOLUME / 10), false);
+		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM, 1), type), Materials.Potions.getNormalFluid(type, CoreProps.BOTTLE_VOLUME), true);
+		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION, 1), type), Materials.Potions.getSplashFluid(type, CoreProps.BOTTLE_VOLUME), true);
+		addFillRecipe(DEFAULT_ENERGY * 2, new ItemStack(Items.GLASS_BOTTLE), PotionUtils.addPotionToItemStack(new ItemStack(Items.LINGERING_POTION, 1), type), Materials.Potions.getLingeringFluid(type, CoreProps.BOTTLE_VOLUME), true);
+		addFillRecipe(DEFAULT_ENERGY, new ItemStack(Items.ARROW), PotionUtils.addPotionToItemStack(new ItemStack(Items.TIPPED_ARROW), type),  Materials.Potions.getLingeringFluid(type, CoreProps.BOTTLE_VOLUME / 10), false);
 	}
 
 	public static void addDefaultSeedOilRecipes() {
