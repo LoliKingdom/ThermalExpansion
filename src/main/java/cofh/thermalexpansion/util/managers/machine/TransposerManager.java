@@ -157,7 +157,7 @@ public class TransposerManager {
 
 		/* ELEMENTAL */
 		{
-			FluidStack expFluid = Materials.CRYOTHEUM.getStack(FluidType.LIQUID, 200);
+			FluidStack expFluid = Materials.CRYOTHEUM.getStack(FluidType.MOLTEN, 200);
 
 			addFillRecipe(16000, Materials.SULFUR.getStack(ItemMaterialType.DUST, 2), new ItemStack(Items.BLAZE_POWDER), expFluid, false);
 			addFillRecipe(16000, ItemHelper.cloneStack(Items.SNOWBALL, 2), Materials.BLIZZ.getItem(ItemMaterialType.DUST, false), expFluid, false);
