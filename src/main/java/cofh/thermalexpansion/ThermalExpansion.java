@@ -82,7 +82,7 @@ public class ThermalExpansion {
 		TEItems.preInit();
 		TESounds.preInit();
 
-		// TODO: temporarily disabled: TEPlugins.preInit();
+		TEPlugins.preInit();
 
 		CoreEnchantments.register();
 		CorePotions.register();
@@ -109,7 +109,7 @@ public class ThermalExpansion {
 		ItemFlorb.parseFlorbs();
 		ItemMorb.parseMorbs();
 
-		// TODO: temporarily disabled: TEPlugins.initialize();
+		TEPlugins.initialize();
 
 		initManagers();
 

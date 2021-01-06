@@ -24,9 +24,27 @@
   <component name="ChangeListManager">
     <list default="true" id="42e611ef-87d9-48b3-b6e9-8746964ea1bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/ThermalExpansion.iws" beforeDir="false" afterPath="$PROJECT_DIR$/ThermalExpansion.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/BrewerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/BrewerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/RefineryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/RefineryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/TransposerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/util/managers/machine/TransposerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/ThermalExpansion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/ThermalExpansion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/init/TEPlugins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/init/TEPlugins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginAbyssalCraft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginActuallyAdditions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginBiomesOPlenty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginElementalDimensions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginExU2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginFamiliarFauna.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginIceAndFire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginNatura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginQuark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginTechReborn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginTerraqueous.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginTraverse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginTropicraft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/PluginUndergroundBiomes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/pam/PluginBoneCraft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/pam/PluginHarvestCraft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/pam/PluginRedbudTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cofh/thermalexpansion/plugins/pam/PluginSpookyTree.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +241,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ThermalExpansion [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -306,7 +335,7 @@
       <workItem from="1609087737558" duration="2721000" />
       <workItem from="1609557838568" duration="6817000" />
       <workItem from="1609723717445" duration="11191000" />
-      <workItem from="1609865576766" duration="1454000" />
+      <workItem from="1609865576766" duration="5910000" />
     </task>
     <servers />
   </component>
@@ -334,38 +363,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" width="1092" height="741" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606652585269" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609000968498">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609949542640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609000968498" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609949542640" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1608220723714">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1608220723714" />
-    <state width="1879" height="165" key="GridCell.Tab.0.bottom" timestamp="1609866503479">
+    <state width="1879" height="165" key="GridCell.Tab.0.bottom" timestamp="1609949414762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503479" />
-    <state width="1879" height="165" key="GridCell.Tab.0.center" timestamp="1609866503479">
+    <state width="1879" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609949414762" />
+    <state width="1879" height="165" key="GridCell.Tab.0.center" timestamp="1609949414762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503479" />
-    <state width="1879" height="165" key="GridCell.Tab.0.left" timestamp="1609866503478">
+    <state width="1879" height="165" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609949414762" />
+    <state width="1879" height="165" key="GridCell.Tab.0.left" timestamp="1609949414762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503478" />
-    <state width="1879" height="165" key="GridCell.Tab.0.right" timestamp="1609866503479">
+    <state width="1879" height="165" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609949414762" />
+    <state width="1879" height="165" key="GridCell.Tab.0.right" timestamp="1609949414762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1879" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609866503479" />
+    <state width="1879" height="165" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609949414762" />
     <state x="431" y="94" key="SettingsEditor" timestamp="1609696408571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609696408571" />
-    <state x="641" y="256" width="861" height="552" key="find.popup" timestamp="1609784892471">
+    <state x="641" y="256" width="861" height="552" key="find.popup" timestamp="1609947608232">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="641" y="256" width="861" height="552" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609784892471" />
+    <state x="641" y="256" width="861" height="552" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609947608232" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1609782813695">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
