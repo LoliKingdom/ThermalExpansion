@@ -39,6 +39,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zone.rong.zairyou.api.material.type.ItemMaterialType;
 import zone.rong.zairyou.objects.Materials;
+import zone.rong.zairyou.objects.ZairyouItems;
 
 import javax.annotation.Nullable;
 import java.io.File;
@@ -310,7 +311,7 @@ public class ItemMorb extends ItemMulti implements IInitializer, IModelRegister 
 		addShapelessRecipe(morbStack, Blocks.SOUL_SAND, "crystalSlag", "slimeball", "enderpearl");
 		addShapelessRecipe(morbReusable, morbStandard, "nuggetSignalum", "nuggetSignalum", "nuggetSignalum");
 
-		addShapelessRecipe(morbStack, Blocks.SOUL_SAND, "crystalSlag", Materials.ROSIN.getStack(ItemMaterialType.GLOB, 1), "enderpearl");
+		addShapelessRecipe(morbStack, Blocks.SOUL_SAND, "crystalSlag", new ItemStack(ZairyouItems.GLOB_ROSIN, 1), "enderpearl");
 
 		return true;
 	}

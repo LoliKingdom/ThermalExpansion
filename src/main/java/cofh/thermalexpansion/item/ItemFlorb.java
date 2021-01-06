@@ -43,6 +43,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zone.rong.zairyou.api.material.type.ItemMaterialType;
 import zone.rong.zairyou.objects.Materials;
+import zone.rong.zairyou.objects.ZairyouItems;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -271,8 +272,8 @@ public class ItemFlorb extends ItemMulti implements IInitializer, IBakeryProvide
 		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", "slimeball", Items.BLAZE_POWDER);
 		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", Items.MAGMA_CREAM);
 
-		addShapelessRecipe(florbStack, "dustWood", "crystalSlag", Materials.ROSIN.getStack(ItemMaterialType.GLOB, 1));
-		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", Materials.ROSIN.getStack(ItemMaterialType.GLOB, 1), Items.BLAZE_POWDER);
+		addShapelessRecipe(florbStack, "dustWood", "crystalSlag", new ItemStack(ZairyouItems.GLOB_ROSIN, 1));
+		addShapelessRecipe(florbMagmaticStack, "dustWood", "crystalSlag", new ItemStack(ZairyouItems.GLOB_ROSIN, 1), Items.BLAZE_POWDER);
 
 		return true;
 	}
